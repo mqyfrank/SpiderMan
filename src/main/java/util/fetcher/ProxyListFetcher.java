@@ -1,4 +1,4 @@
-package util;
+package util.fetcher;
 
 import constants.Constants;
 import org.json.JSONArray;
@@ -7,14 +7,12 @@ import org.jsoup.Jsoup;
 import raw.IpBean;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AvaliableIpUtil {
+public class ProxyListFetcher {
     /**
      * each json string was parsed into <code>_ip</code> for using
      */
@@ -52,8 +50,8 @@ public class AvaliableIpUtil {
                 buffer.append(_read + "]\n");
                 String each_line = "[" + buffer.toString();
                 count++;
-                if(count >= Constants.MAXIMUM_READ)
-                    break;
+                //if(count >= Constants.MAXIMUM_READ)
+                    //break;
 
                 System.out.println(each_line);
                 //parse the each json string line
@@ -108,7 +106,7 @@ public class AvaliableIpUtil {
         //check if one ip address is usable
         try {
             Jsoup.connect(Constants.flight_number_info)
-                    .timeout(6000)
+                    .timeout(30 * 1000)
                     .proxy(host, port)
                     .get();
             return true;
@@ -116,6 +114,8 @@ public class AvaliableIpUtil {
             return false;
         }
     }
+
+
 
     public List<IpBean> get_ipList(){ return this._ipList; }
 }
