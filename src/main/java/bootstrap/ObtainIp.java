@@ -1,24 +1,16 @@
 package bootstrap;
 
-import constants.Constants;
-import raw.IpBean;
-import util.fetcher.ProxyListFetcher;
-import util.SQLServerUtil;
+import entity.ProxyEntity;
+import util.fetcher.Www66IPFetcher;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ObtainIp {
     public static void main(String[] agrs) {
-        ProxyListFetcher proxyListFetcher = new ProxyListFetcher();
-        SQLServerUtil sqlServerUtil = new SQLServerUtil();
+        Www66IPFetcher www66IPFetcher = new Www66IPFetcher(10);
 
-        try {
-            proxyListFetcher.getJsonFromUrl(Constants.free_ip_pool);
-            List<IpBean> free_ip_pool = proxyListFetcher.get_ipList();
-
-            sqlServerUtil.insertIpIntoDb(free_ip_pool);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        List<? extends Object> list = new ArrayList<>();
+        list = www66IPFetcher.fetchAll();
     }
 }

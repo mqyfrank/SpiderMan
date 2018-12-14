@@ -32,8 +32,10 @@ public class Www66IPFetcher extends AbstractFetcher<List<ProxyEntity>> {
 
     protected String pageUrl() {
         String url;
-        if (pageIndex == 1) url = BASE_URL + "/index.html";
-        else url = BASE_URL + "/" + pageIndex + ".html";
+        if (pageIndex == 1)
+            url = BASE_URL + "/areaindex_1/" + pageIndex + ".html";
+        else
+            url = BASE_URL + "/areaindex_1/" + pageIndex + ".html";
 
         return url;
     }
