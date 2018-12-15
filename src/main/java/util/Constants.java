@@ -11,7 +11,7 @@ public class Constants {
     /**
      * free ip pool
      */
-    public static final String free_ip_pool = "https://raw.githubusercontent.com/fate0/proxylist/master/proxy.list";
+    public static final String free_ip_pool = "https://bean.githubusercontent.com/fate0/proxylist/master/proxy.list";
 
 
     /**

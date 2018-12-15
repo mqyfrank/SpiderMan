@@ -1,4 +1,4 @@
-package raw;
+package bean;
 
 public class IpBean2 {
     /**

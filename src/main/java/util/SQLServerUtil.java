@@ -1,7 +1,7 @@
 package util;
 
 import entity.ProxyEntity;
-import raw.IpBean;
+import bean.IpBean;
 
 import java.sql.*;
 import java.util.List;

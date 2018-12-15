@@ -1,10 +1,10 @@
-package raw;
+package bean;
 
 import java.util.List;
 
 public class IpBean {
     /**
-     * 从https://raw.githubusercontent.com/fate0/proxylist/master/proxy.list
+     * 从https://bean.githubusercontent.com/fate0/proxylist/master/proxy.list
      * =====================================================================
      * {
      * 	"from": "proxylist",

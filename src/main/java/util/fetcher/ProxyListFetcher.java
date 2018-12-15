@@ -4,7 +4,7 @@ import util.Constants;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
-import raw.IpBean;
+import bean.IpBean;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
