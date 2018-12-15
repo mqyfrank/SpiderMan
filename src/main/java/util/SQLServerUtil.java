@@ -68,6 +68,7 @@ public class SQLServerUtil {
         if(connection != null) {
             PreparedStatement ps = connection.prepareStatement(_insert_ip);
             for (int i = 0; i < _free_ip_pool.size(); i++) {
+
                 ps.setInt   (1, i + 1);
                 ps.setString(2, _free_ip_pool.get(i).get_from());
                 ps.setInt   (3, _free_ip_pool.get(i).get_port());
@@ -85,37 +86,57 @@ public class SQLServerUtil {
         releaseSource(connection, null);
     }
 
+    /**
+     * Insert ip address into table "CrawledIp", using List<List<ProxyEntity>>
+     * @param _proxy
+     */
     public void insertIpIntoTable2(List<List<ProxyEntity>> _proxy){
-        try {
+        try{
             int count = 0;
-            Connection connection = createNewConnection("VariFlight");
+            Connection connection;
+                connection = createNewConnection("VariFlight");
+
+
 
             //sql
-            String _sql = "INSERT INTO CrawledIp(_HOST, _PORT, _LOCATION, _AGENT_TYPE, _LAST_VALIDATE, _USABLE)" +
-                          " VALUES(?, ?, ?, ?, ?, ?);";
+            String _sql = "INSERT INTO CrawledIp(_HOST, _PORT, _LOCATION, _AGENT_TYPE, _LAST_VALIDATE)" +
+                          " VALUES(?, ?, ?, ?, ?);";
 
-            {
+
+
                 PreparedStatement ps = connection.prepareStatement(_sql);
+
                 for(int i = 0; i < _proxy.size(); i++){
                     for(int j = 0; j < _proxy.get(i).size(); j++){
                         ps.setString(1, _proxy.get(i).get(j).getIp());
                         ps.setInt(2, _proxy.get(i).get(j).getPort());
                         ps.setString(3, _proxy.get(i).get(j).getLocation());
                         ps.setString(4, _proxy.get(i).get(j).getAgentType());
-                        ps.setString(5, (_proxy.get(i).get(j).isUsable() == true) ? "是" : "否");
-                        ps.setString(6,  _proxy.get(i).get(j).getLastValidateTime().toGMTString());
+                        ps.setString(5, _proxy.get(i).get(j).getLastValidateTime().toGMTString());
                         ps.execute();
                         count++;
                     }
                 }
-                ps = null;
+
                 releaseSource(connection, null);
                 System.out.println(count + " record has been inserted.");
-            }
+
 
         }catch (Exception e){
-            System.out.println("[Fatal error]: " + e.getMessage());
-        }
+            System.out.println("[Fatal error occurs]: " + e.getMessage());
 
+        }
+    }
+
+    public void clearTableWithTableName(String dbName, String tableName) throws Exception{
+        //sql
+        String _clear = "DELETE FROM " + tableName + ";";
+        Connection connection = createNewConnection(dbName);
+        Statement statement = createNewStatement(connection);
+
+        if(statement.execute(_clear))
+            return;
+        else
+            throw new RuntimeException("SQL statement execution failed.");
     }
 }

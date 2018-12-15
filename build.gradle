@@ -13,22 +13,22 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile 'org.codehaus.groovy:groovy-all:2.3.11'
-    compile 'sqlserverjdbc.jar'
-    compile 'sqljdbc4.jar'
-    compile 'mysql-connector-java-6.0.6.jar'
-    compile 'jython-2.5.0.jar'
-    compile 'jxl-2.6.12.jar'
-    compile 'jsoup-1.11.3.jar'
-    compile 'json-lib-2.4-jdk15.jar'
-    compile 'json-20160810-javadoc.jar'
-    compile 'json-20160810.jar'
-    compile 'gson-2.6.2.jar'
-    compile 'ezmorph-1.0.6.jar'
-    compile 'commons-logging-1.2.jar'
-    compile 'commons-lang3-3.8.1.jar'
-    compile 'commons-collections4-4.2.jar'
-    compile 'commons-beanutils-1.9.3.jar'
+    compile files('org.codehaus.groovy:groovy-all:2.3.11')
+    compile files('sqlserverjdbc.jar')
+    compile files('sqljdbc4.jar')
+    compile files('mysql-connector-java-6.0.6.jar')
+    compile files('jython-2.5.0.jar')
+    compile files('jxl-2.6.12.jar')
+    compile files('jsoup-1.11.3.jar')
+    compile files('json-lib-2.4-jdk15.jar')
+    compile files('json-20160810-javadoc.jar')
+    compile files('json-20160810.jar')
+    compile files('gson-2.6.2.jar')
+    compile files('ezmorph-1.0.6.jar')
+    compile files('commons-logging-1.2.jar')
+    compile files('commons-lang3-3.8.1.jar')
+    compile files('commons-collections4-4.2.jar')
+    compile files('commons-beanutils-1.9.3.jar')
 }
 
 apply plugin: 'java'
