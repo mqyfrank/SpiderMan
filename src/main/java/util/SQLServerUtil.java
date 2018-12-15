@@ -94,38 +94,37 @@ public class SQLServerUtil {
             Connection connection;
                 connection = createNewConnection("VariFlight");
 
-
-
             //sql
             String _sql = "INSERT INTO CrawledIp(_HOST, _PORT, _LOCATION, _AGENT_TYPE, _LAST_VALIDATE)" +
                           " VALUES(?, ?, ?, ?, ?);";
 
-
-
-                PreparedStatement ps = connection.prepareStatement(_sql);
-
-                for(int i = 0; i < _proxy.size(); i++){
-                    for(int j = 0; j < _proxy.get(i).size(); j++){
-                        ps.setString(1, _proxy.get(i).get(j).getIp());
-                        ps.setInt(2, _proxy.get(i).get(j).getPort());
-                        ps.setString(3, _proxy.get(i).get(j).getLocation());
-                        ps.setString(4, _proxy.get(i).get(j).getAgentType());
-                        ps.setString(5, _proxy.get(i).get(j).getLastValidateTime().toGMTString());
-                        ps.execute();
-                        count++;
-                    }
+            PreparedStatement ps = connection.prepareStatement(_sql);
+            for(int i = 0; i < _proxy.size(); i++){
+                for(int j = 0; j < _proxy.get(i).size(); j++){
+                    ps.setString(1, _proxy.get(i).get(j).getIp());
+                    ps.setInt(2, _proxy.get(i).get(j).getPort());
+                    ps.setString(3, _proxy.get(i).get(j).getLocation());
+                    ps.setString(4, _proxy.get(i).get(j).getAgentType());
+                    ps.setString(5, _proxy.get(i).get(j).getLastValidateTime().toGMTString());
+                    ps.execute();
+                    count++;
                 }
+            }
 
-                releaseSource(connection, null);
-                System.out.println(count + " record has been inserted.");
-
-
+            releaseSource(connection, null);
+            System.out.println(count + " record has been inserted.");
         }catch (Exception e){
             System.out.println("[Fatal error occurs]: " + e.getMessage());
 
         }
     }
 
+    /**
+     * Avoiding same record insertion
+     * @param dbName database name
+     * @param tableName table name
+     * @throws Exception
+     */
     public void clearTableWithTableName(String dbName, String tableName) throws Exception{
         //sql
         String _clear = "DELETE FROM " + tableName + ";";
