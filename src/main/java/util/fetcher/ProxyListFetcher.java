@@ -1,6 +1,6 @@
 package util.fetcher;
 
-import constants.Constants;
+import util.Constants;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;

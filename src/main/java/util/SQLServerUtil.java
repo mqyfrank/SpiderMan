@@ -1,10 +1,8 @@
 package util;
 
-import constants.Constants;
 import entity.ProxyEntity;
 import raw.IpBean;
 
-import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 import java.util.List;
 

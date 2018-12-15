@@ -1,13 +1,7 @@
-package bootstrap;
+package boot;
 
-import entity.ProxyEntity;
-import util.ArrayUtil;
 import util.SQLServerUtil;
-import util.fetcher.GoubanjiaFetcher;
 import util.fetcher.KuaiDailiFetcher;
-import util.fetcher.Www66IPFetcher;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ObtainIp {
     public static void main(String[] args) {
