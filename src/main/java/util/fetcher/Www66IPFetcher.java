@@ -12,6 +12,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * This fetcher's website url is "www.66ip.cn", but whatever I try,
+ * It constantly show me the [ERROR 521]:{ HTTP error fetching URL}
+ */
+@Deprecated
 public class Www66IPFetcher extends AbstractFetcher<List<ProxyEntity>> {
 
     private static final String BASE_URL = "http://www.66ip.cn";
@@ -33,9 +38,9 @@ public class Www66IPFetcher extends AbstractFetcher<List<ProxyEntity>> {
     protected String pageUrl() {
         String url;
         if (pageIndex == 1)
-            url = BASE_URL + "/areaindex_1/" + pageIndex + ".html";
+            url = BASE_URL + "/1.html";
         else
-            url = BASE_URL + "/areaindex_1/" + pageIndex + ".html";
+            url = BASE_URL + "/" + pageIndex + ".html";
 
         return url;
     }

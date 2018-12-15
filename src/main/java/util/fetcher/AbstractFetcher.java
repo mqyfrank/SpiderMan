@@ -14,10 +14,11 @@ public abstract class AbstractFetcher<T> implements Fetcher {
             {"Connection", "keep-alive"},
             {"Cache-Control", "max-age=0"},
             {"Upgrade-Insecure-Requests", "1"},
-            {"User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko)"},
+            {"User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) " +
+                    "Chrome/70.0.3538.110 Safari/537.36"},
             {"Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"},
-            {"Accept-Encoding", "gzip, deflate, sdch"},
-            {"Accept-Language", "zh-CN,zh;q=0.8"},
+            {"Accept-Encoding", "gzip, deflate"},
+            {"Accept-Language", "zh,zh-TW;q=0.9,en-US;q=0.8,en;q=0.7"},
     };
 
     //current page index, counting from 1
@@ -44,14 +45,15 @@ public abstract class AbstractFetcher<T> implements Fetcher {
         String url = pageUrl();
         pageIndex++;
         System.out.println("fetching page: " + url);
+        Connection connection;
         try {
-            Connection connection = Jsoup.connect(url);
+            connection = Jsoup.connect(url).timeout(4000).followRedirects(true);
             for (String[] head : HEADERS) {
                 connection.header(head[0], head[1]);
             }
-            connection.timeout(4000).followRedirects(true);
             html = connection.execute().parse().html();//execute
         } catch (IOException e) {
+            e.printStackTrace();
             System.out.println("fetch page error: " + e.getMessage());
         }
 
