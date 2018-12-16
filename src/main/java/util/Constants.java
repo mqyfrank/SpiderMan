@@ -31,4 +31,9 @@ public class Constants {
     public static final String dbURL = "jdbc:sqlserver://localhost:1433;DataBaseName=";
     public static final String userName = "sa";
     public static final String userPwd = "CHINA19980223`";
+
+    /**
+     * Verify url
+     */
+    public static final String VERIFY_URL = "http://www.baidu.com";
 }
