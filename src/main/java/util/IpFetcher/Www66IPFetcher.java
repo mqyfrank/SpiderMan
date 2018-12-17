@@ -1,6 +1,6 @@
-package util.fetcher;
+package util.IpFetcher;
 
-import entity.ProxyEntity;
+import bean.ProxyBean;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -13,11 +13,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * This fetcher's website url is "www.66ip.cn", but whatever I try,
+ * This IpFetcher's website url is "www.66ip.cn", but whatever I try,
  * It constantly show me the [ERROR 521]:{ HTTP error fetching URL}
  */
 @Deprecated
-public class Www66IPFetcher extends AbstractFetcher<List<ProxyEntity>> {
+public class Www66IPFetcher extends AbstractFetcher<List<ProxyBean>> {
 
     private static final String BASE_URL = "http://www.66ip.cn";
 
@@ -45,9 +45,9 @@ public class Www66IPFetcher extends AbstractFetcher<List<ProxyEntity>> {
         return url;
     }
 
-    protected List<ProxyEntity> parseHtml(String html) {
+    protected List<ProxyBean> parseHtml(String html) {
 
-        List<ProxyEntity> res = new ArrayList<>();
+        List<ProxyBean> res = new ArrayList<>();
         Document doc = Jsoup.parse(html);
         Elements tables = doc.select("tbody");
         if(tables == null)
@@ -67,7 +67,7 @@ public class Www66IPFetcher extends AbstractFetcher<List<ProxyEntity>> {
                  * <td>高匿代理</td>
                  * <td>2017年06月29日00时 验证</td>
                  */
-                ProxyEntity enity = new ProxyEntity();
+                ProxyBean enity = new ProxyBean();
                 enity.setIp(tds.get(0).text().trim());
                 enity.setPort(Integer.parseInt(tds.get(1).text()));
                 enity.setLocation(tds.get(2).text().trim());

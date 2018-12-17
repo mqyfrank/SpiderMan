@@ -3,7 +3,6 @@ package util;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
-import java.net.Proxy;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -21,9 +20,8 @@ public class ProxyUtil {
         boolean usable;
         HttpURLConnection urlConnection = null;
         try {
-            URL url = new URL(Constants.VERIFY_URL);
+            URL url = new URL("http://www.variflight.com/sitemap.html?AE71649A58c77=");
             InetSocketAddress inetAddress = new InetSocketAddress(ip, port);
-            Proxy proxy = new Proxy(Proxy.Type.HTTP, inetAddress);
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setConnectTimeout(4 * 1000);
             urlConnection.setInstanceFollowRedirects(false);
@@ -38,10 +36,15 @@ public class ProxyUtil {
                 urlConnection.disconnect();
         }
 
-        System.out.println(String.format("[Verifying result]: host:[%15s], port:[%6d] $available:  " + usable));
+        System.out.println(String.format("@localhost: [Verifying result]: host:[%15s], port:[%6d] $available:  " + usable,
+                ip, port));
         return usable;
     }
 
+    /**
+     * Auto flush database, delete useless ip address
+     * @throws Exception
+     */
     public void autoFlushTable_CrawledIp() throws Exception{
         SQLServerUtil sqlServerUtil = new SQLServerUtil();
         Connection connection = sqlServerUtil.createNewConnection("VariFlight");
@@ -60,4 +63,5 @@ public class ProxyUtil {
             }
         }
     }
+
 }

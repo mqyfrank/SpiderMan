@@ -1,4 +1,4 @@
-package util.fetcher;
+package util.IpFetcher;
 
 public interface Fetcher {
 

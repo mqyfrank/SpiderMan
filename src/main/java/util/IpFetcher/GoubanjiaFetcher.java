@@ -1,6 +1,6 @@
-package util.fetcher;
+package util.IpFetcher;
 
-import entity.ProxyEntity;
+import bean.ProxyBean;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,11 +14,11 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * This fetcher's website url is "http://www.goubanjia.com/free/",
+ * This IpFetcher's website url is "http://www.goubanjia.com/free/",
  * but whatever I try, It constantly show me the [ERROR 404]:{ HTTP error fetching URL}
  */
 @Deprecated
-public class GoubanjiaFetcher extends AbstractFetcher<List<ProxyEntity>> {
+public class GoubanjiaFetcher extends AbstractFetcher<List<ProxyBean>> {
 
     private static final String BASE_URL = "http://www.goubanjia.com/free/";
 
@@ -45,8 +45,8 @@ public class GoubanjiaFetcher extends AbstractFetcher<List<ProxyEntity>> {
     }
 
     @Override
-    protected List<ProxyEntity> parseHtml(String html) {
-        List<ProxyEntity> res = new ArrayList<>();
+    protected List<ProxyBean> parseHtml(String html) {
+        List<ProxyBean> res = new ArrayList<>();
         Document doc = Jsoup.parse(html);
         Elements tables = doc.select("tbody");
         if(tables == null)return res;
@@ -76,7 +76,7 @@ public class GoubanjiaFetcher extends AbstractFetcher<List<ProxyEntity>> {
                 Elements tds = tr.select("td");
                 if (tds.size() != 8) continue;
 
-                ProxyEntity enity = new ProxyEntity();
+                ProxyBean enity = new ProxyBean();
 
                 Element ipPort = tds.get(0);
                 for(Element child : ipPort.children()){

@@ -1,12 +1,12 @@
 package util;
 
-import entity.ProxyEntity;
+import bean.ProxyBean;
 
 import java.util.List;
 
 public class ArrayUtil {
 
-    public static void showListContent(List<List<ProxyEntity>> _proxy){
+    public static void showListContent(List<List<ProxyBean>> _proxy){
         for(int i = 0; i < _proxy.size(); i++)
             for(int j = 0; j < _proxy.get(i).size(); j++){
                 System.out.println("==========================================");

@@ -1,6 +1,6 @@
 package util;
 
-import entity.ProxyEntity;
+import bean.ProxyBean;
 import bean.IpBean;
 
 import java.sql.*;
@@ -85,10 +85,10 @@ public class SQLServerUtil {
     }
 
     /**
-     * Insert ip address into table "CrawledIp", using List<List<ProxyEntity>>
+     * Insert ip address into table "CrawledIp", using List<List<ProxyBean>>
      * @param _proxy
      */
-    public void insertIpIntoTable2(List<List<ProxyEntity>> _proxy){
+    public void insertIpIntoTable2(List<List<ProxyBean>> _proxy){
         try{
             int count = 0;
             Connection connection;
@@ -112,7 +112,7 @@ public class SQLServerUtil {
             }
 
             releaseSource(connection, null);
-            System.out.println(count + " record has been inserted.");
+            System.out.println("@localhost: [SQL Server]: " + count + " record has been inserted.");
         }catch (Exception e){
             System.out.println("[Fatal error occurs]: " + e.getMessage());
 

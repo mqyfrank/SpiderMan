@@ -1,6 +1,6 @@
-package util.fetcher;
+package util.IpFetcher;
 
-import entity.ProxyEntity;
+import bean.ProxyBean;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * http://www.kuaidaili.com 代理爬取
  */
-public class KuaiDailiFetcher extends AbstractFetcher<List<ProxyEntity>> {
+public class KuaiDailiFetcher extends AbstractFetcher<List<ProxyBean>> {
 
     private static final String BASE_URL = "http://www.kuaidaili.com/free/";
 
@@ -40,8 +40,8 @@ public class KuaiDailiFetcher extends AbstractFetcher<List<ProxyEntity>> {
     }
 
     @Override
-    protected List<ProxyEntity> parseHtml(String html) {
-        List<ProxyEntity> res = new ArrayList<>();
+    protected List<ProxyBean> parseHtml(String html) {
+        List<ProxyBean> res = new ArrayList<>();
         Document doc = Jsoup.parse(html);
         Elements tables = doc.select("tbody");
         if(tables == null)return res;
@@ -63,7 +63,7 @@ public class KuaiDailiFetcher extends AbstractFetcher<List<ProxyEntity>> {
                  * <td data-title="最后验证时间">2017-06-24 15:37:07</td>
                  */
 
-                ProxyEntity enity = new ProxyEntity();
+                ProxyBean enity = new ProxyBean();
                 enity.setIp(tds.get(0).text().trim());
                 enity.setPort(Integer.parseInt(tds.get(1).text()));
                 enity.setAgentType(tds.get(2).text().trim());

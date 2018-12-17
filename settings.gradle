@@ -1,3 +1,4 @@
 rootProject.name = 'icecream'
 
 include "util"
+include "test"

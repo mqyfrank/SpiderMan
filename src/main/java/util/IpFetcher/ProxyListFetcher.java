@@ -1,4 +1,4 @@
-package util.fetcher;
+package util.IpFetcher;
 
 import util.Constants;
 import org.json.JSONArray;

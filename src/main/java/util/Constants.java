@@ -6,7 +6,7 @@ public class Constants {
     /**
      * flight information
      */
-    public static final String flight_number_info = "www.variflight.com/sitemap.html?AE71649A58c77=";
+    public static final String flight_number_info = "http://www.variflight.com/sitemap.html?AE71649A58c77=";
 
     /**
      * free ip pool
@@ -36,4 +36,9 @@ public class Constants {
      * Verify url
      */
     public static final String VERIFY_URL = "http://www.baidu.com";
+
+    /**
+     * flight base url
+     */
+    public static final String FLIGHT_BASE = "http://www.variflight.com";
 }

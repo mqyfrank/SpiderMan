@@ -1,4 +1,4 @@
-package util.fetcher;
+package util.IpFetcher;
 
 
 import org.jsoup.Connection;

@@ -1,9 +1,9 @@
-package entity;
+package bean;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public  class ProxyEntity implements Serializable{
+public  class ProxyBean implements Serializable{
     private String ip;
     private int port;
     private String location;
@@ -12,7 +12,7 @@ public  class ProxyEntity implements Serializable{
     private boolean usable;
 
     //constructor
-    public ProxyEntity() {}
+    public ProxyBean() {}
 
     /**
      * IP address
