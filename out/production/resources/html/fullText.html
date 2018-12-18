@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="baidu-site-verification" content="ucoHEaVHET" />
-    <title>飞常准|航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点</title>
+    <title>四川航空 3U3041航班，3U3041航班动态，3U3041航班动态查询-飞常准（Variflight.com）</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="航班动态,航班状态,航班动态跟踪,航班延误,航班准点,跟踪航班动态,航班延误查询,航班动态实时查询"/>
-    <meta name="description" content="飞常准（Variflight.com）是全球领先的航班数据服务公司, 帮飞行旅客提供跟踪航班动态查询航班状态、延误智能预报、航班点评等专业性功能，为携程去哪儿途牛同程春秋航空机票购买用户提供航班行程查询，为商旅用户提供贴心便捷的旅行服务，为机场、空管提供ACDM，保障航班正常"/>
+    <meta name="keywords" content="3U3041,3U3041航班动态,3U3041航班时刻表"/>
+    <meta name="description" content="飞常准提供四川航空3U3041航班动态，3U3041航站楼，3U3041候机楼，3U3041时刻表信息查询。"/>
     <meta name="baidu-site-verification" content="1Sfs5p7h72"/>
     <meta name="360-site-verification" content="db5186c019ef79035320330aa2aa63ff" />
     <link rel="stylesheet" href="/_newstatic/dest/css/jquery.autocomplete.css?v=4185cefa5cd0ca9f17d1810f22ebf8dc">
@@ -27,8 +27,8 @@
     <script src="/_newstatic/dest/js/countryCode.js?v=cd7ff69153103daf5ec8a59309dbaf1e"></script>
     <script>
         var currentModule     = "flight";
-        var currentController = "list";
-        var currentAction     = "fnum";
+        var currentController = "detail";
+        var currentAction     = "index";
     </script>
     <style>
         .single:before{content: '';display: block;width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 6px solid #999999;position: absolute;right: 10px;top: 28px;}
@@ -165,7 +165,8 @@
         </div>
     </div>
 </div>
-</body><div class="f_content">
+</body>
+<div class="f_content">
     <!-- 搜索条 -->
 
     <div class="authCodeBox" style="display: none;">
@@ -202,7 +203,7 @@
             <div id="byNum" class="left" style="display:block;">
                 <label class="byNumLabel left">
                     <input id="byNumInput" onclick="search_input_focus(this)" name="byNumInput" type="text" class="bor"
-                           maxlength="10" placeholder="请输入航班号，如CA111或1111" autocomplete="off" value="3K698">
+                           maxlength="10" placeholder="请输入航班号，如CA111或1111" autocomplete="off" value="3U3041">
                     <div id="codeFilterBox">
                         <ul></ul>
                         <p>历史航班号记录</p>
@@ -223,12 +224,12 @@
                 <div class="Citylabel left">
                     <input type="text" placeholder="出发城市" maxlength="20" onclick="search_input_focus(this)"
                            onblur="search_input_blur()" class="bor autocomplete ac_input" data-id="dep_city" id="dep_city"
-                           style="color:#000" value="香港赤鱲角">
+                           style="color:#000" value="">
                     <div class="change" id="changeCity"></div>
                     <!--点击切换始发地,换change2-->
                     <input type="text" placeholder="到达城市" maxlength="20" onclick="search_input_focus(this)"
                            onblur="search_input_blur()" class="bor autocomplete ac_input" data-id="arr_city" id="arr_city"
-                           style="color:#000" value="樟宜">
+                           style="color:#000" value="">
                     <div id="cityFilterBox">
                         <div class="cityFilterWrap">
                             <div class="cityFilterIn">
@@ -316,7 +317,6 @@
                 </p>
             </div>
         </div>
-
     </div>
     <script>
         $(function () {
@@ -324,9 +324,9 @@
             var reg = /MSIE 8.0/;
             //IE8下由于被刷新页面时input值被清空，需再次塞值
             if (reg.test(usa)) {
-                var depCity = "香港赤鱲角";
-                var arrCity = "樟宜";
-                var fnum = "3K698";
+                var depCity = "";
+                var arrCity = "";
+                var fnum = "3U3041";
                 console.log(arrCity);
                 $('#dep_city').val(depCity);
                 $('#arr_city').val(arrCity);
@@ -334,21 +334,230 @@
             }
 
             ""
-            "";
-            ""
-            ""
-            $('.authCodeBox').show()
-            ""
             ""
         });
     </script>
-    <!-- 搜索无结果 -->
-    <div class="fly_main">
-        <div class="fly_nome">
-            <img src="/_newstatic/dest/img/404.png">
-            <p class="t">抱歉，没有找到您输入的航班信息</p>
+    <!-- 搜索详情页 -->
+    <div class="detail_main">
+        <div class="tit">
+            <div class="state">
+                <div class="reg gre_cor ">到达</div>
+            </div>
+            <img src="http://pic.veryzhun.com/assets/image/aircorp/3u.png" width="32" height="32" alt="航空公司">
+            <span>
+				<b>四川航空 3U3041</b>
+                <p id="order">
+                    <a class="forbiddenBtn" onclick="forbiddenJump('到达')" href="javascript:;" style="color:#e1e5e6;font-size:14px;">[订制该航班动态]</a>
+                    <!--  共享航班	-->
+                    <a href="javascript:;" style="text-decoration: none; cursor: default; padding: 3px 5px; font-size: 12px; border-radius: 5px; color: #fff; background: #dbe2ec;">共享航班</a>
+                    <a href="javascript:;" style="text-decoration: none; cursor: default; font-size: 14px;">实际承运CZ3427</a>
+                    <!--  共享航班	-->
+				</p>
+				<input type="hidden" id="fdate" value="2018-12-18"/>
+				<input type="hidden" id="depTime" value="18:40"/>
+				<input type="hidden" id="arrTime" value="21:25"/>
+				<input type="hidden" id="fnum" value="3U3041">
+			</span>
+            <div class="clear"></div>
         </div>
-    </div></div>
+        <div class="flyProc">
+            <div id="p_box" class="p_box">
+                <div class="p_ti">
+                    <span class="ti">全程1390公里</span>
+                    <span class="ti">时长2小时4分</span>
+                </div>
+                <div class="cir_l curr"><!-- 行程大于 0% 添加样式 curr -->
+                    <span>广州</span>
+                </div>
+                <div class="cir_r" style="left:100%;"><!-- 行程等于 100% 添加样式 curr -->
+                    <span>成都</span>
+                </div>
+                <div class="line_com" style="width:100%">
+                    <span style="width:100%">有色线</span>
+                </div>
+                <div class="plane" style="left:100%;"></div>
+            </div>
+            <div class="p_info">
+                <ul>
+                    <li class="mileage">机型：<span>AIRBUSA321-271N NEO</span></li>
+                    <li class="time">机龄：<span>0.2年</span></li>
+                    <li class="per">历史准点率：<span class="lchIMG">
+                        <img src="/flight/detail/productImg&s=a2xCRzRZOGNEZUkrUnp4RkRjVDlvQlRObU5XUG1hdGk=&w=80&h=40&fontSize=16&fontColor=707070&background=dbe2ec?AE71649A58c77="/>
+                    </span>
+                    </li>
+                    <li class="age"><span>比计划提前33分钟到达</span></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="old_state">前序航班已于16:53到达</div>
+        <!-- 出发 -->
+        <div class="fly_mian">
+            <div class="f_title f_title_a">
+                <!-- 出发右上角的出发计划时间 -->
+                <span class="date">2018-12-18 周二计划起飞18:40</span>
+                <h2 title="广州白云T2">
+                    <em></em>
+                    广州白云T2
+                </h2>
+            </div>
+            <ul class="f_common rand_ul_dep">
+                <li class="weather">
+                    <img src="/_newstatic/dest/img/updata/weather_small/qingtian.png"
+                         width="62" height="62" alt="qingtian">
+                    <p>8°/21°C 晴天</p>
+                    <p>PM2.5：65</p>
+                    <p>小面积延误</p>
+                </li>
+
+                <li class="time">
+                    <p class="gray_t">实际起飞</p>
+                    <p class="com rand_p">
+                        <img src="/flight/detail/productImg&s=QThXcDh2WjhobEpqV1hzdjYwOU5aN1AzaS84b1RuaGo=&w=280&h=40&fontSize=20&fontColor=1e90ff&background=ffffff&charw=15?AE71649A58c77=">
+                    </p>
+                    <p class="com">
+                        <em style="display:block; background-color:white; color:#2987c7; font-size:10px;">
+                        </em>
+                    </p>
+                </li>
+
+                <li class="inspect">
+                    <p class="gray_t">值机柜台</p>
+                    <p class="com rand_p">
+                        <img src="/flight/detail/productImg&s=aFFsNXlwRkhMcE4rS09meFQ4clF3bWVRMVlVPQ==&w=80&h=40&fontSize=20&fontColor=1e90ff&background=ffffff&charw=20?AE71649A58c77=">
+                    </p>
+                </li>
+
+                <li class="entrance">
+                    <p class="gray_t">登机口</p>
+                    <p class="com rand_p">
+                        <img src="/flight/detail/productImg&s=d1ZsQkk5aDZaTkFLZXFrZGtDcjZLNFhaUTJNPQ==&w=80&h=40&fontSize=20&fontColor=1e90ff&background=ffffff&charw=20?AE71649A58c77=">
+                    </p>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- 经停 -->
+
+        <!-- 到达 -->
+        <div class="fly_mian">
+            <div class="f_title f_title_c">
+				<span class="date">2018-12-18 周二计划到达21:25</span>
+                <h2 title="成都双流T2">
+                    <em></em>
+                    成都双流T2
+                </h2>
+            </div>
+            <ul class="f_common rand_ul_arr">
+                <li class="weather">
+                    <img src="/_newstatic/dest/img/updata/weather_small/duoyun.png"
+                         width="62" height="62" alt="duoyun">
+                    <p>4°/12°C多云</p>
+                    <p>PM2.5：108</p>
+                    <p>小面积延误</p>
+                </li>
+                <li class="time">
+                    <p class="gray_t">实际到达</p>
+                    <p class="com rand_p">
+                        <img src="/flight/detail/productImg&s=eXdPMk00aFA4QUFNWEtndDdLSGJXSWE0WEk0PQ==&w=80&h=40&fontSize=20&fontColor=1e90ff&background=ffffff?AE71649A58c77=">
+                    </p>
+                    <p class="com">
+                        <em style="display:block; background-color:white; color:#2987c7; font-size:10px;">
+                        </em>
+                    </p>
+                </li>
+
+                <li class="inspect">
+                    <p class="gray_t">行李转盘</p>
+                    <p class="com rand_p">
+                        <img src="/flight/detail/productImg&s=ZmFQY3R0ZTA5Y1FWT2s3UEk1YUcxL3hjSTdVPQ==&w=80&h=40&fontSize=20&fontColor=1e90ff&background=ffffff&charw=20?AE71649A58c77=">
+                    </p>
+
+                </li>
+
+                <li class="entrance">
+                    <p class="gray_t">到达口</p>
+                    <p class="com rand_p">
+                        --
+                    </p>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+    <script>
+
+        function getElementsByClassName(className, tagName, node) {
+            if (node) {
+                node = typeof node == "string" ? document.getElementById(node) : node;
+            } else {
+                node = document.body;
+            }
+            tagName = tagName || "*";
+            if (document.getElementsByClassName) {
+                return node.getElementsByClassName(className);
+            } else {
+                var tag = node.getElementsByTagName(tagName);
+                var tagAll = [];
+                for (var i = 0; i < tag.length; i++) {
+                    for (var j = 0, n = tag[i].className.split(' ') ; j < n.length; j++) {
+                        if (n[j] == className) {
+                            tagAll.push(tag[i]);
+                            break;
+                        }
+                    }
+                }
+                return tagAll;
+            }
+        }
+
+
+        function func() {
+            var arr = Array.prototype.slice.call(arguments);
+            var clsName = arr.shift();
+            var ulObj = getElementsByClassName(clsName);
+            var pObj;
+            pObj = getElementsByClassName('rand_p', 'p', ulObj[0]);
+
+            var temp = [];
+            for (var m = 0; m < arr.length; m++) {
+                temp[arr[m] - 1] = pObj[m].innerHTML;
+            }
+
+            for (var n = 0; n < pObj.length; n++) {
+                pObj[n].innerHTML = temp[n];
+            }
+        }
+
+
+        func('rand_ul_dep', 2,1,3);
+        func('rand_ul_arr', 2,1,3);
+
+
+        function midFunc() {
+            var divObj = getElementsByClassName('rand_mid_div');
+            var temp = [];
+            var pObj;
+
+            for (var i = 0; i < divObj.length; i++) {
+                pObj = getElementsByClassName('rand_p', 'p', divObj[i] );
+                temp = [];
+                for (var m = 0; m < arguments.length; m++) {
+                    temp[arguments[m] - 1] = pObj[m].innerHTML;
+                }
+
+                for (var n = 0; n < pObj.length; n++) {
+                    pObj[n].innerHTML = temp[n];
+                }
+
+            }
+        }
+
+    </script>
+</div>
 <!--footer begin -->
 <div class="footer">
     <p class="f_t">
@@ -428,5 +637,16 @@
         document.write('<script src="' + src + '" id="sozz"><\/script>');
     })();
 </script>
-</html>
+</html><script>
+    var depCode = "";
+    var arrCode = "";
+    var depCity = "";
+    var arrCity = "";
 
+    //	$('#friendOrder').addClass('on');
+    //	$('#myOrder').removeClass('on');
+    //	$('.searchBarTogSpan').css({'left':'142px'});
+    $("#byNum").show();
+    $("#byCity").hide();
+    $(".select").text($(".byNum").text());
+</script>

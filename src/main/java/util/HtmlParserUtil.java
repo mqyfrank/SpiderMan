@@ -17,7 +17,8 @@ public class HtmlParserUtil {
      * @param html
      * @return
      */
-    public List<DetailFlightBean> parseHtml(String html){
+    public DetailFlightBean parseHtml(String html){
+        //Logger
         org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger("HtmlParserUtil.class");
         BasicConfigurator.configure();
 
@@ -27,8 +28,23 @@ public class HtmlParserUtil {
         /**
          * ================================================================================
          */
-        Elements _fly_list = doc.select("[class=fly_list]");
-        logger.info("[Size of fly_list]: " + _fly_list.size());
+        Element _fly_list = doc.selectFirst("[class=f_content]");
+        if(_fly_list != null)
+            logger.info("[Found]: fly_list");
+        else   //don't contains detail information
+            return null;
+
+        Element _detail_main = _fly_list.selectFirst("[class=detail_main]");
+        if(_detail_main != null)
+            logger.info("[Found]: detail_main");
+        else
+            return null;
+
+        Element _tit = _detail_main.selectFirst("[class=tit]");
+        if(_tit != null)
+            logger.info("[Found]: tit");
+        else
+            ;
         /**
          * ================================================================================
          */
