@@ -10,3 +10,29 @@
 
 ![ipdb](https://github.com/DotDashDotDash/CanWeFly/blob/master/extras/resources/ipdb.png) 
 
+通过每次抓取航网的一个页面就刷新一次代理IP，防止被封禁
+
+## ✈ 解析variflight页面结构:
+
+包含所有航班的页面链接: http://www.variflight.com/sitemap.html?AE71649A58c77= ,页面结构如下:
+
+```html
+<div class="list">
+    <strong style="font-size:14px">2018-12-18航班列表</strong>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/sitemap/flight?AE71649A58c77=">国内航段列表</a>
+    <br>
+    <br>
+    <a href="/flight/fnum/036925.html?AE71649A58c77=">036925</a>
+    <a href="/flight/fnum/036926.html?AE71649A58c77=">036926</a>
+    <a href="/flight/fnum/3K691.html?AE71649A58c77=">3K691</a>
+    <a href="/flight/fnum/3K692.html?AE71649A58c77=">3K692</a>
+    <a href="/flight/fnum/3K695.html?AE71649A58c77=">3K695</a>
+    <a href="/flight/fnum/3K696.html?AE71649A58c77=">3K696</a>
+    .......
+```
+
+页面要解析的页面内容很简单，一个是**航班名**，一个是对应航班名的链接**URL**。之后需要解析每一个航班的当日航班状态:
+
+* 当日同一航班号可能会有多批次的航班，因为航班号是共享的
+* 当日对应航班号可能会没有待飞的航班，因为航班号是登记在航空公司，可以不使用
+* 当日一个航班号只有一架航班
+
