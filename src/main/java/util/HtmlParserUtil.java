@@ -24,25 +24,25 @@ public class HtmlParserUtil {
      */
     public List<DetailFlightBean> parseHtmlOfCertainFlight(String html){
         @Note
-        String flightCode;
+        String flightCode = "尚无信息";
         @Note
-        String flightCompany;
+        String flightCompany = "尚无信息";
         @Note
-        String planDeparture;
+        String planDeparture = "尚无信息";
         @Note
-        String planArrive;
+        String planArrive = "尚无信息";
         @Note
-        String departure;
+        String departure = "尚无信息";
         @Note
-        String arrival;
+        String arrival = "尚无信息";
         @Note
-        String actualDeparture;
+        String actualDeparture = "尚无信息";
         @Note
-        String actualArrive;
+        String actualArrive = "尚无信息";
         @Note
-        String status;
+        String status = "尚无信息";
         @Note
-        String flightName;
+        String flightName = "尚无信息";
         @Array
         List<DetailFlightBean> list = new ArrayList<>();
 
@@ -61,6 +61,7 @@ public class HtmlParserUtil {
                 flightConclusion = "暂无信息";
             }
             Elements _relative = _f_content.select("div.fly_list > div#li_box.li_box > ul#list > li");
+            logger.info("[Relative size]: " + _relative.size());
             if(_relative.size() != 0){
                 for(Element _each_flight : _relative){
                     Elements _company = _each_flight.select("div.li_com > span.w260 > b > a");
@@ -82,17 +83,19 @@ public class HtmlParserUtil {
                         arrival = _timeAndPlace.get(5).text();
                         status = _timeAndPlace.get(7).text();
 
-                        logger.info("[航班]: " + flightName +
-                                    "[计划起飞]: " + planDeparture +
-                                    " [实际起飞]: " + actualDeparture +
-                                    " [起飞地点]: " + departure +
-                                    " [计划到达]: " + planArrive +
-                                    " [实际到达]: " + actualArrive +
-                                    " [到达地点]: " + arrival +
-                                    " [状态]: " + status);
                         list.add(new DetailFlightBean(flightCompany, flightCode, planDeparture, actualDeparture,
                                 planArrive, actualArrive, departure, arrival, status));
+                        logger.info(" [航班]: " + flightName +
+                                " [航空公司]: " + flightCompany +
+                                " [计划起飞]: " + planDeparture +
+                                " [实际起飞]: " + actualDeparture +
+                                " [起飞地点]: " + departure +
+                                " [计划到达]: " + planArrive +
+                                " [实际到达]: " + actualArrive +
+                                " [到达地点]: " + arrival +
+                                " [状态]: " + status);
                     }
+
                 }
             }else{
                 logger.info("航班列表为空");

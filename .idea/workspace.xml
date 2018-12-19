@@ -54,7 +54,7 @@
         <item name="VariFlight@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="VariFlight: database" type="bdf80c8a:MssqlImplModel$Database" />
         <item name="dbo: schema" type="3adcb6a6:MssqlImplModel$Schema" />
-        <item name="SimpleFlight: table" type="a00791b9:MssqlImplModel$Table" />
+        <item name="CrawledIp: table" type="a00791b9:MssqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -112,23 +112,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ObtainIp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/boot/ObtainIp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/05ce3f6b-1e7f-4574-8428-4e05dfef39b0/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
+      <file leaf-file-name="CrawledIp" pinned="false" current-in-tab="true">
+        <entry file="das://05ce3f6b-1e7f-4574-8428-4e05dfef39b0/database/VariFlight/schema/dbo/table/CrawledIp">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
-              <caret column="29" selection-start-column="29" selection-end-column="29" />
+              <filtering enabled="true" />
+              <column-attributes>
+                <column name="%%physloc%%" enabled="false" />
+              </column-attributes>
             </state>
           </provider>
         </entry>
@@ -148,7 +139,7 @@
       <file leaf-file-name="VariFlightFetcher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/flightFetcher/VariFlightFetcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-737">
+            <state relative-caret-position="-830">
               <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -160,8 +151,8 @@
       <file leaf-file-name="AbstractFlyFetcher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/flightFetcher/AbstractFlyFetcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+            <state relative-caret-position="47">
+              <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -169,44 +160,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlyFetcher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/util/flightFetcher/FlyFetcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AllFlights.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/fetcher/AllFlights.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProxyUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/util/ProxyUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HtmlParserUtil.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HtmlParserUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/HtmlParserUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1302">
-              <caret line="62" column="102" selection-start-line="62" selection-start-column="102" selection-end-line="62" selection-end-column="102" />
+            <state relative-caret-position="1995">
+              <caret line="95" column="52" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -217,8 +175,8 @@
       <file leaf-file-name="fullText.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/html/fullText.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="446" column="21" lean-forward="true" selection-start-line="446" selection-start-column="21" selection-end-line="446" selection-end-column="21" />
+            <state relative-caret-position="-443">
+              <caret line="404" column="21" selection-start-line="404" selection-start-column="21" selection-end-line="404" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -941,12 +899,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/html/fullText.html" />
         <option value="$PROJECT_DIR$/src/main/java/annotation/Array.java" />
         <option value="$PROJECT_DIR$/src/main/java/bean/DetailFlightBean.java" />
-        <option value="$PROJECT_DIR$/src/test/java/fetcher/AllFlights.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/05ce3f6b-1e7f-4574-8428-4e05dfef39b0/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/util/ProxyUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/flightFetcher/VariFlightFetcher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/flightFetcher/AbstractFlyFetcher.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/SQLServerUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/fetcher/AllFlights.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/flightFetcher/AbstractFlyFetcher.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/HtmlParserUtil.java" />
       </list>
     </option>
@@ -1027,68 +985,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="boot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="icecream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanWeFly" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="icecream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanWeFly" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="flightFetcher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="icecream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanWeFly" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="icecream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanWeFly" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="icecream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanWeFly" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="icecream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanWeFly" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="icecream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanWeFly" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="boot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="icecream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CanWeFly" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fetcher" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1303,12 +1200,12 @@
       <workItem from="1544770784733" duration="491000" />
       <workItem from="1544791884488" duration="23780000" />
       <workItem from="1544881060214" duration="5292000" />
-      <workItem from="1544968197566" duration="47202000" />
+      <workItem from="1544968197566" duration="53432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78787000" />
+    <option name="totallyTimeSpent" value="85017000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -1330,9 +1227,9 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.8607595" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20815752" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.31223628" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.28691983" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.49507734" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49929675" visible="true" weight="0.21514745" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32911393" />
@@ -1389,6 +1286,10 @@
     <breakpoint-manager>
       <option name="time" value="28" />
     </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="das://05ce3f6b-1e7f-4574-8428-4e05dfef39b0/database/VariFlight/schema/dbo/table/free_ip_pool">
@@ -1604,13 +1505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/annotation/Note.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/log.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1703,16 +1597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://05ce3f6b-1e7f-4574-8428-4e05dfef39b0/database/VariFlight/schema/dbo/table/CrawledIp">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="%%physloc%%" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/ProxyUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
@@ -1720,33 +1604,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/boot/ObtainIp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/fetcher/AllFlights.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/05ce3f6b-1e7f-4574-8428-4e05dfef39b0/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" selection-start-column="29" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1767,20 +1624,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/flightFetcher/AbstractFlyFetcher.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/fetcher/AllFlights.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="42">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/flightFetcher/VariFlightFetcher.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/05ce3f6b-1e7f-4574-8428-4e05dfef39b0/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-737">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/boot/ObtainIp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1789,8 +1650,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/html/fullText.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="446" column="21" lean-forward="true" selection-start-line="446" selection-start-column="21" selection-end-line="446" selection-end-column="21" />
+        <state relative-caret-position="-443">
+          <caret line="404" column="21" selection-start-line="404" selection-start-column="21" selection-end-line="404" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1827,13 +1688,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/HtmlParserUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/annotation/Note.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1302">
-          <caret line="62" column="102" selection-start-line="62" selection-start-column="102" selection-end-line="62" selection-end-column="102" />
+        <state relative-caret-position="63">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/flightFetcher/VariFlightFetcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-830">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/flightFetcher/AbstractFlyFetcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/HtmlParserUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="95" column="52" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://05ce3f6b-1e7f-4574-8428-4e05dfef39b0/database/VariFlight/schema/dbo/table/CrawledIp">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="%%physloc%%" enabled="false" />
+          </column-attributes>
         </state>
       </provider>
     </entry>

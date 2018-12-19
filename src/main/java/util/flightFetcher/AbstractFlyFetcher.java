@@ -2,14 +2,6 @@ package util.flightFetcher;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import util.ProxyUtil;
-import util.SQLServerUtil;
-
-import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.HashMap;
 import java.util.List;
 
@@ -39,7 +31,8 @@ public abstract class AbstractFlyFetcher<All, Certain, CertainAll> implements Fl
         System.out.println("@localhost: fetching url: " + allFlightUrl);
         Connection connection;
         try {
-            connection = Jsoup.connect(allFlightUrl).timeout(4000).followRedirects(true);
+            connection = Jsoup.connect(allFlightUrl).timeout(0).followRedirects(true)
+                              .proxy("61.143.38.53", 8118);
             for(String[] header : HEADERS){
                 connection.header(header[0], header[1]);
             }

@@ -1,7 +1,6 @@
 package fetcher;
 
 import bean.DetailFlightBean;
-import bean.SimpleFlightBean;
 import util.flightFetcher.VariFlightFetcher;
 
 import java.util.HashMap;
