@@ -23,7 +23,7 @@ public class ParseHtmlTest {
             while((html = reader.readLine()) != null)
                 builder.append(html + "\n");
 
-            util.parseHtml(builder.toString());
+            util.parseHtmlOfCertainFlight(builder.toString());
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -62,7 +62,7 @@ public class DetailFlightBean implements Serializable {
                             String planTakeOffTime, String actualTakeOffTime,
                             String planArriveTime,  String actualArriveTime,
                             String departure, String arrival,
-                            String status, String conclusion){
+                            String status){
         this.flightCompany = company;
         this.flightCode = flightCode;
         this.planTakeOffTime = planTakeOffTime;
@@ -70,7 +70,6 @@ public class DetailFlightBean implements Serializable {
         this.planArriveTime = planArriveTime;
         this.actualArriveTime = actualArriveTime;
         this.status = status;
-        this.conclusion = conclusion;
         this.departure = departure;
         this.destination = arrival;
     }
@@ -104,7 +103,4 @@ public class DetailFlightBean implements Serializable {
 
     public double getPunctuality(){ return this.punctuality; }
     public void setPunctuality(double punctuality){ this.punctuality = punctuality; }
-
-    public String getConclusion(){ return this.conclusion; }
-    public void setConclusion(String conclusion){ this.conclusion = conclusion; }
 }

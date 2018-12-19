@@ -2,13 +2,19 @@ package util.flightFetcher;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
-import util.Constants;
+import org.jsoup.nodes.Document;
+import util.ProxyUtil;
+import util.SQLServerUtil;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashMap;
 import java.util.List;
 
 
-public abstract class AbstractFlyFetcher<All, Certain> implements FlyFetcher{
+public abstract class AbstractFlyFetcher<All, Certain, CertainAll> implements FlyFetcher{
 
     //for HTTP headers
     private static final String[][] HEADERS = new String[][]{
@@ -39,7 +45,7 @@ public abstract class AbstractFlyFetcher<All, Certain> implements FlyFetcher{
             }
             //get html text
             html = connection.execute().parse().html();
-        }catch (IOException e){
+        }catch (Exception e){
             System.out.println("@localhost: [fatal error occurs in \"getPage()\": " + e.getMessage());
             return null;
         }
@@ -48,5 +54,5 @@ public abstract class AbstractFlyFetcher<All, Certain> implements FlyFetcher{
 
 
     public abstract List<All> fetchAllPage();
-    public abstract List<Certain> fetchCertainPage(List<All> allFlight);
+    public abstract HashMap<String, CertainAll> fetchCertainPage(List<All> allFlight);
 }

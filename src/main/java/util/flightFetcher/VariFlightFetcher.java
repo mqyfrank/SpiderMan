@@ -1,19 +1,18 @@
 package util.flightFetcher;
 
-import annotation.Note;
 import bean.DetailFlightBean;
 import bean.SimpleFlightBean;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.logging.log4j.core.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import util.Constants;
+import util.HtmlParserUtil;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, DetailFlightBean> {
+public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, DetailFlightBean, List<DetailFlightBean>> {
 
     /**
      * Fetch all flights' simple information from main web page
@@ -24,6 +23,8 @@ public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, Deta
         //base url
         String url = Constants.flight_number_info;
         String html = getPage(url);
+        if(html == "" || html == null)
+            throw new RuntimeException("No content!");
         /**
          * <div class="list">
          *     <strong style="font-size:14px">2018-12-17航班列表</strong>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -62,21 +63,25 @@ public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, Deta
         return list;
     }
 
+    /**
+     * Using certain flight's name to fetch certain information,
+     * for each page, changing system proxy once, all proxys
+     * were store in database"VariFlight" , in table "CrawledIp"
+     * @param allFlight
+     * @return
+     */
     @Override
-    public List<DetailFlightBean> fetchCertainPage(List<SimpleFlightBean> allFlight) {
-
-        List<DetailFlightBean> detailFlightBeans = new ArrayList<>();
-        //allFlight contains all flights' link and flight's code
+    public HashMap<String, List<DetailFlightBean>> fetchCertainPage(List<SimpleFlightBean> allFlight) {
+        HtmlParserUtil htmlParserUtil = new HtmlParserUtil();
+        HashMap<String, List<DetailFlightBean>> detailFlightBeans = new HashMap<>();
 
         for(SimpleFlightBean bean : allFlight) {
-            //get the flight's code(number)
-            @Note
-            String flightCode = bean.getFlight();
             //obtain base url, like "http://www.variflight.com/flight/fnum/AA8893.html?AE71649A58c77="
             String certainUrl = Constants.FLIGHT_BASE + bean.getLink();
             String html = this.getPage(certainUrl); //get whole page
 
-
+            //parse html text, return List
+            detailFlightBeans.put(bean.getFlight(), htmlParserUtil.parseHtmlOfCertainFlight(html));
         }
         return null;
     }

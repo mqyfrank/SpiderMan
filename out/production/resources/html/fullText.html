@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="baidu-site-verification" content="ucoHEaVHET" />
-    <title>四川航空 3U3041航班，3U3041航班动态，3U3041航班动态查询-飞常准（Variflight.com）</title>
+    <title>3U8678航班3U8678航班动态，3U8678航班查询</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="3U3041,3U3041航班动态,3U3041航班时刻表"/>
-    <meta name="description" content="飞常准提供四川航空3U3041航班动态，3U3041航站楼，3U3041候机楼，3U3041时刻表信息查询。"/>
+    <meta name="keywords" content="3U8678,3U8678航班"/>
+    <meta name="description" content="飞常准提供3U8678航班动态，3U8678航班状态，3U8678航班查询，订制3U8678航班短信等服务。"/>
     <meta name="baidu-site-verification" content="1Sfs5p7h72"/>
     <meta name="360-site-verification" content="db5186c019ef79035320330aa2aa63ff" />
     <link rel="stylesheet" href="/_newstatic/dest/css/jquery.autocomplete.css?v=4185cefa5cd0ca9f17d1810f22ebf8dc">
@@ -27,8 +27,8 @@
     <script src="/_newstatic/dest/js/countryCode.js?v=cd7ff69153103daf5ec8a59309dbaf1e"></script>
     <script>
         var currentModule     = "flight";
-        var currentController = "detail";
-        var currentAction     = "index";
+        var currentController = "list";
+        var currentAction     = "fnum";
     </script>
     <style>
         .single:before{content: '';display: block;width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 6px solid #999999;position: absolute;right: 10px;top: 28px;}
@@ -165,8 +165,7 @@
         </div>
     </div>
 </div>
-</body>
-<div class="f_content">
+</body><div class="f_content">
     <!-- 搜索条 -->
 
     <div class="authCodeBox" style="display: none;">
@@ -203,7 +202,7 @@
             <div id="byNum" class="left" style="display:block;">
                 <label class="byNumLabel left">
                     <input id="byNumInput" onclick="search_input_focus(this)" name="byNumInput" type="text" class="bor"
-                           maxlength="10" placeholder="请输入航班号，如CA111或1111" autocomplete="off" value="3U3041">
+                           maxlength="10" placeholder="请输入航班号，如CA111或1111" autocomplete="off" value="3U8678">
                     <div id="codeFilterBox">
                         <ul></ul>
                         <p>历史航班号记录</p>
@@ -212,7 +211,7 @@
                 <label class="container datepicker_r left">
                     <div class="text">出发时间</div>
                     <span class="datepic"></span>
-                    <input type="text" maxlength="10" id="numDatepicker" value="2018-12-18" class="index_date"
+                    <input type="text" maxlength="10" id="numDatepicker" value="2018-12-19" class="index_date"
                            readonly>
                     <div class="clear"></div>
                 </label>
@@ -224,12 +223,12 @@
                 <div class="Citylabel left">
                     <input type="text" placeholder="出发城市" maxlength="20" onclick="search_input_focus(this)"
                            onblur="search_input_blur()" class="bor autocomplete ac_input" data-id="dep_city" id="dep_city"
-                           style="color:#000" value="">
+                           style="color:#000" value="丽江三义">
                     <div class="change" id="changeCity"></div>
                     <!--点击切换始发地,换change2-->
                     <input type="text" placeholder="到达城市" maxlength="20" onclick="search_input_focus(this)"
                            onblur="search_input_blur()" class="bor autocomplete ac_input" data-id="arr_city" id="arr_city"
-                           style="color:#000" value="">
+                           style="color:#000" value="兰州中川">
                     <div id="cityFilterBox">
                         <div class="cityFilterWrap">
                             <div class="cityFilterIn">
@@ -308,7 +307,7 @@
                 <label class="container left datepicker_l">
                     <div class="text">出发时间</div>
                     <span class="datepic"></span>
-                    <input type="text" maxlength="10" id="cityDatepicker" value="2018-12-18" class="index_date"
+                    <input type="text" maxlength="10" id="cityDatepicker" value="2018-12-19" class="index_date"
                            readonly>
                     <div class="clear"></div>
                 </label>
@@ -317,6 +316,7 @@
                 </p>
             </div>
         </div>
+
     </div>
     <script>
         $(function () {
@@ -324,9 +324,9 @@
             var reg = /MSIE 8.0/;
             //IE8下由于被刷新页面时input值被清空，需再次塞值
             if (reg.test(usa)) {
-                var depCity = "";
-                var arrCity = "";
-                var fnum = "3U3041";
+                var depCity = "丽江三义";
+                var arrCity = "兰州中川";
+                var fnum = "3U8678";
                 console.log(arrCity);
                 $('#dep_city').val(depCity);
                 $('#arr_city').val(arrCity);
@@ -337,159 +337,159 @@
             ""
         });
     </script>
-    <!-- 搜索详情页 -->
-    <div class="detail_main">
+    <!-- 搜索列表页 -->
+    <div class="fly_list">
         <div class="tit">
-            <div class="state">
-                <div class="reg gre_cor ">到达</div>
-            </div>
-            <img src="http://pic.veryzhun.com/assets/image/aircorp/3u.png" width="32" height="32" alt="航空公司">
-            <span>
-				<b>四川航空 3U3041</b>
-                <p id="order">
-                    <a class="forbiddenBtn" onclick="forbiddenJump('到达')" href="javascript:;" style="color:#e1e5e6;font-size:14px;">[订制该航班动态]</a>
-                    <!--  共享航班	-->
-                    <a href="javascript:;" style="text-decoration: none; cursor: default; padding: 3px 5px; font-size: 12px; border-radius: 5px; color: #fff; background: #dbe2ec;">共享航班</a>
-                    <a href="javascript:;" style="text-decoration: none; cursor: default; font-size: 14px;">实际承运CZ3427</a>
-                    <!--  共享航班	-->
-				</p>
-				<input type="hidden" id="fdate" value="2018-12-18"/>
-				<input type="hidden" id="depTime" value="18:40"/>
-				<input type="hidden" id="arrTime" value="21:25"/>
-				<input type="hidden" id="fnum" value="3U3041">
-			</span>
-            <div class="clear"></div>
+            <h1 title="3U8678">3U8678<span>12月19号周三 共3次航班</span>
+            </h1>
         </div>
-        <div class="flyProc">
-            <div id="p_box" class="p_box">
-                <div class="p_ti">
-                    <span class="ti">全程1390公里</span>
-                    <span class="ti">时长2小时4分</span>
-                </div>
-                <div class="cir_l curr"><!-- 行程大于 0% 添加样式 curr -->
-                    <span>广州</span>
-                </div>
-                <div class="cir_r" style="left:100%;"><!-- 行程等于 100% 添加样式 curr -->
-                    <span>成都</span>
-                </div>
-                <div class="line_com" style="width:100%">
-                    <span style="width:100%">有色线</span>
-                </div>
-                <div class="plane" style="left:100%;"></div>
-            </div>
-            <div class="p_info">
-                <ul>
-                    <li class="mileage">机型：<span>AIRBUSA321-271N NEO</span></li>
-                    <li class="time">机龄：<span>0.2年</span></li>
-                    <li class="per">历史准点率：<span class="lchIMG">
-                        <img src="/flight/detail/productImg&s=a2xCRzRZOGNEZUkrUnp4RkRjVDlvQlRObU5XUG1hdGk=&w=80&h=40&fontSize=16&fontColor=707070&background=dbe2ec?AE71649A58c77="/>
-                    </span>
-                    </li>
-                    <li class="age"><span>比计划提前33分钟到达</span></li>
-                </ul>
+        <div class="li_box" id="li_box">
+            <div class="t_tit" id="t_tit">
+                <p class="w260">航班信息</p>
+                <p class="w150">计划起飞</p>
+                <p class="w150">实际起飞</p>
+                <p class="w150">出发地</p>
+                <p class="w150">计划到达</p>
+                <p class="w150">实际到达</p>
+                <p class="w150">到达地</p>
+                <p class="w150">准点率</p>
+                <p class="w150">状态</p>
+                <p class="w150">订制</p>
                 <div class="clear"></div>
             </div>
-        </div>
-        <div class="clear"></div>
-        <div class="old_state">前序航班已于16:53到达</div>
-        <!-- 出发 -->
-        <div class="fly_mian">
-            <div class="f_title f_title_a">
-                <!-- 出发右上角的出发计划时间 -->
-                <span class="date">2018-12-18 周二计划起飞18:40</span>
-                <h2 title="广州白云T2">
-                    <em></em>
-                    广州白云T2
-                </h2>
-            </div>
-            <ul class="f_common rand_ul_dep">
-                <li class="weather">
-                    <img src="/_newstatic/dest/img/updata/weather_small/qingtian.png"
-                         width="62" height="62" alt="qingtian">
-                    <p>8°/21°C 晴天</p>
-                    <p>PM2.5：65</p>
-                    <p>小面积延误</p>
-                </li>
+            <ul id="list">
+                <li style="position: relative;">
+                    <a class="searchlist_innerli" href="/schedule/LJG-LHW-3U8678.html?AE71649A58c77="></a>
+                    <!--  共享航班	-->
+                    <!--  共享航班	-->
+                    <div class="li_com">
+						<span class="w260">
+							<img onerror="javascript:this.src='/_newstatic/dest/img/default.png'"
+                                 src=http://pic.veryzhun.com/assets/image/aircorp/3u.png
+                                 width="22"
+                                 height="22"
+                                 align="四川航空">
+							<b>
+								<a href="javascript:void(0);"
+                                   title="四川航空">四川航空</a>
+								<a href="javascript:void(0);"
+                                   title="3U8678">3U8678</a>
+							</b>
+						</span>
 
-                <li class="time">
-                    <p class="gray_t">实际起飞</p>
-                    <p class="com rand_p">
-                        <img src="/flight/detail/productImg&s=QThXcDh2WjhobEpqV1hzdjYwOU5aN1AzaS84b1RuaGo=&w=280&h=40&fontSize=20&fontColor=1e90ff&background=ffffff&charw=15?AE71649A58c77=">
-                    </p>
-                    <p class="com">
-                        <em style="display:block; background-color:white; color:#2987c7; font-size:10px;">
-                        </em>
-                    </p>
+                        <span class="w150" dplan="15:15">15:15</span>
+                        <span class="w150 randEle">--</span>
+                        <span class="w150">丽江三义</span>
+                        <span class="w150" aplan="17:25">17:25</span>
+                        <span class="w150 randEle">--</span>
+                        <span class="w150">兰州中川T2</span>
+                        <!-- 准点率 -->
+                        <span class="w150">
+                            <img src="/flight/detail/productImg&s=a0o0K2Z1V3QzS3FvSDgzbGF0Vm5PQmxSSFQzR0ZKc3U=&w=63&h=28&fontSize=13&fontColor=2f3032&background=ffffff?AE71649A58c77="/>
+                        </span>
+                        <span class="w150 blu_cor">计划</span>
+                        <span class="fob">
+                            <a class="showOrderBtn"
+                               href="/follow/3U8678.html?AE71649A58c77=&dplan=15%3A15&depCity=%E4%B8%BD%E6%B1%9F%E4%B8%89%E4%B9%89&aplan=17%3A25&arrCity=%E5%85%B0%E5%B7%9E%E4%B8%AD%E5%B7%9DT2&fdate=2018-12-19&depCode=LJG&arrCode=LHW"
+                               style="display:none; z-index:6;position: relative;"
+                               target="_blank">[订制航班]
+                            </a>
+                            <a class="hideOrderBtn" href="javascript:;"
+                                   style="display:inline-block; z-index:6;position: relative;"
+                                   onclick="checkLogin(this)">[订制航班]
+                            </a>
+                        </span>
+                        <div class="clear"></div>
+                    </div>
                 </li>
-
-                <li class="inspect">
-                    <p class="gray_t">值机柜台</p>
-                    <p class="com rand_p">
-                        <img src="/flight/detail/productImg&s=aFFsNXlwRkhMcE4rS09meFQ4clF3bWVRMVlVPQ==&w=80&h=40&fontSize=20&fontColor=1e90ff&background=ffffff&charw=20?AE71649A58c77=">
-                    </p>
+                <li style="position: relative;">
+                    <a class="searchlist_innerli" href="/schedule/LJG-HRB-3U8678.html?AE71649A58c77="></a>
+                    <!--  共享航班	-->
+                    <!--  共享航班	-->
+                    <div class="li_com">
+						<span class="w260">
+							<img onerror="javascript:this.src='/_newstatic/dest/img/default.png'"
+                                 src=http://pic.veryzhun.com/assets/image/aircorp/3u.png
+                                 width="22"
+                                 height="22"
+                                 align="四川航空">
+							<b>
+								<a href="javascript:void(0);"
+                                   title="四川航空">四川航空</a>
+								<a href="javascript:void(0);"
+                                   title="3U8678">3U8678</a>
+							</b>
+						</span>
+                        <span class="w150" dplan="15:15">15:15</span>
+                        <span class="w150 randEle">--</span>
+                        <span class="w150">丽江三义</span>
+                        <span class="w150" aplan="21:55">21:55</span>
+                        <span class="w150 randEle">--</span>
+                        <span class="w150">哈尔滨太平T2</span>
+                        <!-- 准点率 -->
+                        <span class="w150">
+                            <img src="/flight/detail/productImg&s=a0o0K2Z1V3QzS3FvSDgzbGF0Vm5PQmxSSFQzR0ZKc3U=&w=63&h=28&fontSize=13&fontColor=2f3032&background=ffffff?AE71649A58c77="/>
+                        </span>
+                        <span class="w150 blu_cor">计划</span>
+                        <span class="fob">
+                            <a class="showOrderBtn"
+                               href="/follow/3U8678.html?AE71649A58c77=&dplan=15%3A15&depCity=%E4%B8%BD%E6%B1%9F%E4%B8%89%E4%B9%89&aplan=21%3A55&arrCity=%E5%93%88%E5%B0%94%E6%BB%A8%E5%A4%AA%E5%B9%B3T2&fdate=2018-12-19&depCode=LJG&arrCode=HRB"
+                               style="display:none; z-index:6;position: relative;"
+                               target="_blank">[订制航班]
+                            </a>
+                            <a class="hideOrderBtn" href="javascript:;"
+                               style="display:inline-block; z-index:6;position: relative;"
+                               onclick="checkLogin(this)">[订制航班]
+                            </a>
+                        </span>
+                        <div class="clear"></div>
+                    </div>
                 </li>
-
-                <li class="entrance">
-                    <p class="gray_t">登机口</p>
-                    <p class="com rand_p">
-                        <img src="/flight/detail/productImg&s=d1ZsQkk5aDZaTkFLZXFrZGtDcjZLNFhaUTJNPQ==&w=80&h=40&fontSize=20&fontColor=1e90ff&background=ffffff&charw=20?AE71649A58c77=">
-                    </p>
+                <li style="position: relative;">
+                    <a class="searchlist_innerli" href="/schedule/LHW-HRB-3U8678.html?AE71649A58c77="></a>
+                    <!--  共享航班	-->
+                    <!--  共享航班	-->
+                    <div class="li_com">
+						<span class="w260">
+							<img onerror="javascript:this.src='/_newstatic/dest/img/default.png'"
+                                 src=http://pic.veryzhun.com/assets/image/aircorp/3u.png							     width="22" height="22"
+                                 align="四川航空">
+							<b>
+								<a href="javascript:void(0);"
+                                   title="四川航空">四川航空</a>
+								<a href="javascript:void(0);"
+                                   title="3U8678">3U8678</a>
+							</b>
+						</span>
+                        <span class="w150" dplan="18:10">18:10</span>
+                        <span class="w150 randEle">--</span>
+                        <span class="w150">兰州中川T2</span>
+                        <span class="w150" aplan="21:55">21:55</span>
+                        <span class="w150 randEle">--</span>
+                        <span class="w150">哈尔滨太平T2</span>
+                        <!-- 准点率 -->
+                        <span class="w150">
+                            <img src="/flight/detail/productImg&s=NGkwaFlrdkxhL3luNmFzaE9lcnIxOHpuNzBOaFdsV2c=&w=63&h=28&fontSize=13&fontColor=2f3032&background=ffffff?AE71649A58c77="/>
+                        </span>
+                        <span class="w150 blu_cor">计划</span>
+                        <span class="fob">
+                            <a class="showOrderBtn"
+                               href="/follow/3U8678.html?AE71649A58c77=&dplan=18%3A10&depCity=%E5%85%B0%E5%B7%9E%E4%B8%AD%E5%B7%9DT2&aplan=21%3A55&arrCity=%E5%93%88%E5%B0%94%E6%BB%A8%E5%A4%AA%E5%B9%B3T2&fdate=2018-12-19&depCode=LHW&arrCode=HRB"
+                               style="display:none; z-index:6;position: relative;"
+                               target="_blank">[订制航班]
+                            </a>
+                            <a class="hideOrderBtn" href="javascript:;"
+                                   style="display:inline-block; z-index:6;position: relative;"
+                                   onclick="checkLogin(this)">[订制航班]
+                            </a>
+                        </span>
+                        <div class="clear"></div>
+                    </div>
                 </li>
-
             </ul>
         </div>
-
-        <!-- 经停 -->
-
-        <!-- 到达 -->
-        <div class="fly_mian">
-            <div class="f_title f_title_c">
-				<span class="date">2018-12-18 周二计划到达21:25</span>
-                <h2 title="成都双流T2">
-                    <em></em>
-                    成都双流T2
-                </h2>
-            </div>
-            <ul class="f_common rand_ul_arr">
-                <li class="weather">
-                    <img src="/_newstatic/dest/img/updata/weather_small/duoyun.png"
-                         width="62" height="62" alt="duoyun">
-                    <p>4°/12°C多云</p>
-                    <p>PM2.5：108</p>
-                    <p>小面积延误</p>
-                </li>
-                <li class="time">
-                    <p class="gray_t">实际到达</p>
-                    <p class="com rand_p">
-                        <img src="/flight/detail/productImg&s=eXdPMk00aFA4QUFNWEtndDdLSGJXSWE0WEk0PQ==&w=80&h=40&fontSize=20&fontColor=1e90ff&background=ffffff?AE71649A58c77=">
-                    </p>
-                    <p class="com">
-                        <em style="display:block; background-color:white; color:#2987c7; font-size:10px;">
-                        </em>
-                    </p>
-                </li>
-
-                <li class="inspect">
-                    <p class="gray_t">行李转盘</p>
-                    <p class="com rand_p">
-                        <img src="/flight/detail/productImg&s=ZmFQY3R0ZTA5Y1FWT2s3UEk1YUcxL3hjSTdVPQ==&w=80&h=40&fontSize=20&fontColor=1e90ff&background=ffffff&charw=20?AE71649A58c77=">
-                    </p>
-
-                </li>
-
-                <li class="entrance">
-                    <p class="gray_t">到达口</p>
-                    <p class="com rand_p">
-                        --
-                    </p>
-                </li>
-            </ul>
-
-        </div>
-
     </div>
     <script>
-
         function getElementsByClassName(className, tagName, node) {
             if (node) {
                 node = typeof node == "string" ? document.getElementById(node) : node;
@@ -503,7 +503,7 @@
                 var tag = node.getElementsByTagName(tagName);
                 var tagAll = [];
                 for (var i = 0; i < tag.length; i++) {
-                    for (var j = 0, n = tag[i].className.split(' ') ; j < n.length; j++) {
+                    for (var j = 0, n = tag[i].className.split(' '); j < n.length; j++) {
                         if (n[j] == className) {
                             tagAll.push(tag[i]);
                             break;
@@ -515,49 +515,71 @@
         }
 
 
-        function func() {
-            var arr = Array.prototype.slice.call(arguments);
-            var clsName = arr.shift();
-            var ulObj = getElementsByClassName(clsName);
-            var pObj;
-            pObj = getElementsByClassName('rand_p', 'p', ulObj[0]);
+        b(1,2);
 
+        function b() {
+            var divObj = getElementsByClassName('li_com');
             var temp = [];
-            for (var m = 0; m < arr.length; m++) {
-                temp[arr[m] - 1] = pObj[m].innerHTML;
-            }
-
-            for (var n = 0; n < pObj.length; n++) {
-                pObj[n].innerHTML = temp[n];
-            }
-        }
-
-
-        func('rand_ul_dep', 2,1,3);
-        func('rand_ul_arr', 2,1,3);
-
-
-        function midFunc() {
-            var divObj = getElementsByClassName('rand_mid_div');
-            var temp = [];
-            var pObj;
+            var spanObj;
 
             for (var i = 0; i < divObj.length; i++) {
-                pObj = getElementsByClassName('rand_p', 'p', divObj[i] );
+                spanObj = getElementsByClassName('randEle', 'span', divObj[i]);
                 temp = [];
                 for (var m = 0; m < arguments.length; m++) {
-                    temp[arguments[m] - 1] = pObj[m].innerHTML;
+                    temp[arguments[m] - 1] = spanObj[m].innerHTML;
                 }
 
-                for (var n = 0; n < pObj.length; n++) {
-                    pObj[n].innerHTML = temp[n];
+                for (var n = 0; n < spanObj.length; n++) {
+                    spanObj[n].innerHTML = temp[n];
                 }
 
             }
         }
 
-    </script>
-</div>
+        var appointTop = $("#li_box").position().top;
+        (function () {
+            /*
+             --两种情况
+             --1.正常滚动搜索框固定
+             --2.用户滚动后再次刷新
+             */
+
+            //用户滚动后再次刷新
+            var iniTop = $(window).scrollTop();
+            searchBarFix(iniTop);
+            //正常滚动搜索框固定
+            $(window).scroll(function () {
+                var currentTop = $(window).scrollTop();
+                searchBarFix(currentTop);
+            });
+        })();
+
+        //搜索条滚动定位
+        function searchBarFix(currentTop) {
+            var fly_Search_scroll = $("#t_tit");
+            var li_box = $('#li_box');
+            //var f_content = $('.f_content');
+            if (currentTop > appointTop) {
+                if (!fly_Search_scroll.hasClass('search_scroll_fixed')) {
+                    fly_Search_scroll.addClass('search_scroll_fixed');
+                    li_box.addClass('li_box_pad');
+                }
+            } else {
+                if (fly_Search_scroll.hasClass('search_scroll_fixed')) {
+                    fly_Search_scroll.removeClass('search_scroll_fixed');
+                    li_box.removeClass('li_box_pad');
+                }
+            }
+        }
+
+        var depCode = "LJG";
+        var arrCode = "LHW";
+        var depCity = "丽江三义";
+        var arrCity = "兰州中川";
+        $("#byNum").show();
+        $("#byCity").hide();
+        $(".select").text($(".byNum").text());
+    </script></div>
 <!--footer begin -->
 <div class="footer">
     <p class="f_t">
@@ -637,16 +659,5 @@
         document.write('<script src="' + src + '" id="sozz"><\/script>');
     })();
 </script>
-</html><script>
-    var depCode = "";
-    var arrCode = "";
-    var depCity = "";
-    var arrCity = "";
+</html>
 
-    //	$('#friendOrder').addClass('on');
-    //	$('#myOrder').removeClass('on');
-    //	$('.searchBarTogSpan').css({'left':'142px'});
-    $("#byNum").show();
-    $("#byCity").hide();
-    $(".select").text($(".byNum").text());
-</script>
