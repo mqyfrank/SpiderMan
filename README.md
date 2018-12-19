@@ -16,7 +16,7 @@
 
 包含所有航班的页面链接: http://www.variflight.com/sitemap.html?AE71649A58c77= ,页面显示如下:
 
-![mainpage]()
+![mainpage](https://github.com/DotDashDotDash/CanWeFly/blob/master/extras/resources/mainpage.png)
 
 用Google Chrome显示网页源代码，可以找到下面片段:
 
@@ -42,7 +42,7 @@
 
 以3U3047航班为例，其页面如下:
 
-![3U3047]()
+![3U3047](https://github.com/DotDashDotDash/CanWeFly/blob/master/extras/resources/3U3047.png)
 
 可以得到一架航班包含了如下信息:
 
@@ -58,5 +58,5 @@
 
 用Google Chrome检查网页源代码，观察得到上述对应的信息包含在`div class=f_content`标签当中，(Google Chrome显示的html格式比较乱，标签之间的联系不容易看，可以把对应的html源代码复制到IDEA中的html文本当中，层次结构看的比较清楚)
 
-![htmltext]()
+![htmltext](https://github.com/DotDashDotDash/CanWeFly/blob/master/extras/resources/htmltext.png)
 
