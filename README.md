@@ -14,11 +14,16 @@
 
 ## ✈ 解析variflight页面结构:
 
-包含所有航班的页面链接: http://www.variflight.com/sitemap.html?AE71649A58c77= ,页面结构如下:
+包含所有航班的页面链接: http://www.variflight.com/sitemap.html?AE71649A58c77= ,页面显示如下:
+
+![mainpage]()
+
+用Google Chrome显示网页源代码，可以找到下面片段:
 
 ```html
 <div class="list">
-    <strong style="font-size:14px">2018-12-18航班列表</strong>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/sitemap/flight?AE71649A58c77=">国内航段列表</a>
+    <strong style="font-size:14px">2018-12-18航班列表</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/sitemap/flight?AE71649A58c77=">国内航段列表</a>
     <br>
     <br>
     <a href="/flight/fnum/036925.html?AE71649A58c77=">036925</a>
@@ -32,7 +37,26 @@
 
 页面要解析的页面内容很简单，一个是**航班名**，一个是对应航班名的链接**URL**。之后需要解析每一个航班的当日航班状态:
 
-* 当日同一航班号可能会有多批次的航班，因为航班号是共享的
-* 当日对应航班号可能会没有待飞的航班，因为航班号是登记在航空公司，可以不使用
-* 当日一个航班号只有一架航班
+* 当日同一航班号可能会有一个或者多批次的航班
+* 当日对应航班号可能会没有待飞的航班
+
+以3U3047航班为例，其页面如下:
+
+![3U3047]()
+
+可以得到一架航班包含了如下信息:
+
+* 航空公司名称
+* 航班号
+* 预计起飞时间
+* 实际起飞时间
+* 预计降落时间
+* 实际降落时间
+* 出发地
+* 目的地
+* 航班状态(延误，到达等)
+
+用Google Chrome检查网页源代码，观察得到上述对应的信息包含在`div class=f_content`标签当中，(Google Chrome显示的html格式比较乱，标签之间的联系不容易看，可以把对应的html源代码复制到IDEA中的html文本当中，层次结构看的比较清楚)
+
+![htmltext]()
 
