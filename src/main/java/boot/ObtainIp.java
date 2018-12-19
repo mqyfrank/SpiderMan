@@ -6,7 +6,7 @@ import util.IpFetcher.KuaiDailiFetcher;
 
 public class ObtainIp {
     public static void main(String[] args) {
-        KuaiDailiFetcher kuaiDailiFetcher = new KuaiDailiFetcher(5);
+        KuaiDailiFetcher kuaiDailiFetcher = new KuaiDailiFetcher(10);
         SQLServerUtil util = new SQLServerUtil();
         try {
             util.clearTableWithTableName("VariFlight", "CrawledIp");
