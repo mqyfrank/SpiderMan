@@ -60,3 +60,8 @@
 
 ![htmltext](https://github.com/DotDashDotDash/CanWeFly/blob/master/extras/resources/htmltext.png)
 
+## ✈项目进度:
+
+- [x] 爬虫代理 
+- [x] variflght主页面解析
+- [x] 具体航班页面解析
