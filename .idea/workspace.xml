@@ -202,11 +202,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HtmlParserUtil.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HtmlParserUtil.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/HtmlParserUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+            <state relative-caret-position="1302">
+              <caret line="62" column="102" selection-start-line="62" selection-start-column="102" selection-end-line="62" selection-end-column="102" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -214,11 +214,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fullText.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fullText.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/html/fullText.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="360" column="19" selection-start-line="360" selection-start-column="19" selection-end-line="360" selection-end-column="19" />
+            <state relative-caret-position="349">
+              <caret line="446" column="21" lean-forward="true" selection-start-line="446" selection-start-column="21" selection-end-line="446" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1303,16 +1303,15 @@
       <workItem from="1544770784733" duration="491000" />
       <workItem from="1544791884488" duration="23780000" />
       <workItem from="1544881060214" duration="5292000" />
-      <workItem from="1544968197566" duration="46953000" />
+      <workItem from="1544968197566" duration="47202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78538000" />
+    <option name="totallyTimeSpent" value="78787000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
@@ -1331,9 +1330,9 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.9395218" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.8607595" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.40787622" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.31223628" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.49507734" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49929675" visible="true" weight="0.21514745" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32911393" />
@@ -1788,20 +1787,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/HtmlParserUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/html/fullText.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="360" column="19" selection-start-line="360" selection-start-column="19" selection-end-line="360" selection-end-column="19" />
+        <state relative-caret-position="349">
+          <caret line="446" column="21" lean-forward="true" selection-start-line="446" selection-start-column="21" selection-end-line="446" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1834,6 +1823,16 @@
             <element signature="n#style#0;n#a#3;n#p#3;n#div#1;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#4;n#p#3;n#div#1;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#5;n#p#3;n#div#1;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/HtmlParserUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1302">
+          <caret line="62" column="102" selection-start-line="62" selection-start-column="102" selection-end-line="62" selection-end-column="102" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
