@@ -1,7 +1,8 @@
 package util;
 
+import bean.DetailFlightBean;
 import bean.ProxyBean;
-import bean.IpBean;
+import bean.SimpleFlightBean;
 
 import java.sql.*;
 import java.util.List;
@@ -49,40 +50,6 @@ public class SQLServerUtil {
         }
     }
 
-    /**
-     * Using given list of IP, insert them into database
-     * @param _free_ip_pool
-     * @throws Exception
-     */
-    @Deprecated
-    public void insertIpIntoTable1(List<IpBean> _free_ip_pool) throws Exception{
-        Connection connection = createNewConnection("VariFlight");
-        //define sql statement module
-        String _insert_ip = "INSERT INTO free_ip_pool" +
-                "(_NUM, _FROM, _PORT, _ANONYMITY, _HOST, _COUNTRY, _TYPE, _RESPONSE_TIME, _EXPORT_ADDRESS)" +
-                "VALUES" +
-                "(?, ?, ?, ?, ?, ?, ?, ?, ?);";
-
-        if(connection != null) {
-            PreparedStatement ps = connection.prepareStatement(_insert_ip);
-            for (int i = 0; i < _free_ip_pool.size(); i++) {
-
-                ps.setInt   (1, i + 1);
-                ps.setString(2, _free_ip_pool.get(i).get_from());
-                ps.setInt   (3, _free_ip_pool.get(i).get_port());
-                ps.setString(4, _free_ip_pool.get(i).get_anonymity());
-                ps.setString(5, _free_ip_pool.get(i).get_host());
-                ps.setString(6, _free_ip_pool.get(i).get_country());
-                ps.setString(7, _free_ip_pool.get(i).get_type());
-                ps.setDouble(8, _free_ip_pool.get(i).get_response_time());
-                ps.setString(9, _free_ip_pool.get(i).get_export_address().get(0));
-                ps.execute();
-            }
-        }
-
-        //release system source
-        releaseSource(connection, null);
-    }
 
     /**
      * Insert ip address into table "CrawledIp", using List<List<ProxyBean>>
@@ -92,7 +59,7 @@ public class SQLServerUtil {
         try{
             int count = 0;
             Connection connection;
-                connection = createNewConnection("VariFlight");
+            connection = createNewConnection("VariFlight");
 
             //sql
             String _sql = "INSERT INTO CrawledIp(_HOST, _PORT, _LOCATION, _AGENT_TYPE, _LAST_VALIDATE)" +
@@ -135,5 +102,56 @@ public class SQLServerUtil {
             return;
         else
             throw new RuntimeException("SQL statement execution failed.");
+    }
+
+    /**
+     * Insert main flight page's content into database
+     * @param simpleFlightBeans
+     * @throws Exception
+     */
+    public void insertSimpleFlightBean(List<SimpleFlightBean> simpleFlightBeans) throws Exception{
+        Connection connection = createNewConnection("VariFlight");
+
+        //sql
+        String sql = "INSERT INTO SimpleFlight(_FLIGHT) VALUES(?);";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        for(int i = 0; i < simpleFlightBeans.size(); i++){
+            preparedStatement.setString(1, simpleFlightBeans.get(i).getFlight());
+            preparedStatement.execute();
+        }
+
+        //release source
+        releaseSource(connection, null);
+    }
+
+    /**
+     * Insert DetailFlightBean into database
+     * @param detailFlightBeans
+     * @throws Exception
+     */
+    public void insertDetailFlightBean(List<DetailFlightBean> detailFlightBeans) throws Exception{
+        Connection connection = createNewConnection("VariFlight");
+
+        //sql
+        String sql = "INSERT INTO DetailFlightBean(航班号, 航空公司, 计划起飞, 实际起飞, 计划到达, 实际到达, 起飞地点, " +
+                "到达地点, 状态) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        for(int i = 0; i < detailFlightBeans.size(); i++){
+            statement.setString(1, detailFlightBeans.get(i).getFlightCode());
+            statement.setString(2, detailFlightBeans.get(i).getFlightCompany());
+            statement.setString(3, detailFlightBeans.get(i).getPlanTakeOffTime());
+            statement.setString(4, detailFlightBeans.get(i).getActualTakeOffTime());
+            statement.setString(5, detailFlightBeans.get(i).getPlanArriveTime());
+            statement.setString(6, detailFlightBeans.get(i).getActualArriveTime());
+            statement.setString(7, detailFlightBeans.get(i).getDeparture());
+            statement.setString(8, detailFlightBeans.get(i).getDestination());
+            statement.setString(9, detailFlightBeans.get(i).getStatus());
+
+            statement.execute();
+        }
+        releaseSource(connection, null);
     }
 }

@@ -8,6 +8,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import util.Constants;
 import util.HtmlParserUtil;
+import util.SQLServerUtil;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -75,14 +77,19 @@ public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, Deta
         HtmlParserUtil htmlParserUtil = new HtmlParserUtil();
         HashMap<String, List<DetailFlightBean>> detailFlightBeans = new HashMap<>();
 
+        int count = 0;
         for(SimpleFlightBean bean : allFlight) {
+            count++;
             //obtain base url, like "http://www.variflight.com/flight/fnum/AA8893.html?AE71649A58c77="
             String certainUrl = Constants.FLIGHT_BASE + bean.getLink();
-            String html = this.getPage(certainUrl); //get whole page
+            String html;
+            html = this.getPage(certainUrl); //get whole page
 
-            //parse html text, return List
-            detailFlightBeans.put(bean.getFlight(), htmlParserUtil.parseHtmlOfCertainFlight(html));
+            List<DetailFlightBean> detailFlightBeanList = htmlParserUtil.parseHtmlOfCertainFlight(html);
+            detailFlightBeans.put(bean.getFlight(), detailFlightBeanList);
+            if(count == 9)
+                break;
         }
-        return null;
+        return detailFlightBeans;
     }
 }

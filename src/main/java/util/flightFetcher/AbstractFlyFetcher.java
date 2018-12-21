@@ -26,20 +26,20 @@ public abstract class AbstractFlyFetcher<All, Certain, CertainAll> implements Fl
      * @return
      */
     public String getPage(String _url){
-        String html;
+        String html = "";
         String allFlightUrl = _url;
         System.out.println("@localhost: fetching url: " + allFlightUrl);
         Connection connection;
         try {
             connection = Jsoup.connect(allFlightUrl).timeout(0).followRedirects(true)
-                              .proxy("61.143.38.53", 8118);
+                              .proxy("180.118.134.222", 9000);
             for(String[] header : HEADERS){
                 connection.header(header[0], header[1]);
             }
             //get html text
             html = connection.execute().parse().html();
         }catch (Exception e){
-            System.out.println("@localhost: [fatal error occurs in \"getPage()\": " + e.getMessage());
+            System.out.println("@localhost: [fatal error occurs in \"getPage()\"]: " + e.getMessage());
             return null;
         }
         return html;

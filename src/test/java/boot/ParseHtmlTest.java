@@ -15,7 +15,7 @@ public class ParseHtmlTest {
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     new FileInputStream(new File(System.getProperty("user.dir")
                             + File.separator + "src" + File.separator + "main" + File.separator
-                            + "resources" + File.separator + "html" + File.separator + "fullText.html"))
+                            + "resources" + File.separator + "html" + File.separator + "fullText2.html"))
             ));
 
             StringBuilder builder = new StringBuilder();
