@@ -76,6 +76,7 @@ public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, Deta
     public HashMap<String, List<DetailFlightBean>> fetchCertainPage(List<SimpleFlightBean> allFlight) {
         HtmlParserUtil htmlParserUtil = new HtmlParserUtil();
         HashMap<String, List<DetailFlightBean>> detailFlightBeans = new HashMap<>();
+        SQLServerUtil sqlServerUtil = new SQLServerUtil();
 
         int count = 0;
         for(SimpleFlightBean bean : allFlight) {
@@ -86,6 +87,11 @@ public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, Deta
             html = this.getPage(certainUrl); //get whole page
 
             List<DetailFlightBean> detailFlightBeanList = htmlParserUtil.parseHtmlOfCertainFlight(html);
+            try {
+                sqlServerUtil.insertDetailFlightBean(detailFlightBeanList);
+            }catch (Exception e){
+                System.out.println("[SQL Server]: " + e.getMessage());
+            }
             detailFlightBeans.put(bean.getFlight(), detailFlightBeanList);
             if(count == 9)
                 break;

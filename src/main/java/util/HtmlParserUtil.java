@@ -79,6 +79,16 @@ public class HtmlParserUtil {
                         actualArrive = _timeAndPlace.get(4).text();
                         arrival = _timeAndPlace.get(5).text();
                         status = _timeAndPlace.get(7).text();
+
+                        //standard format
+                        if(planDeparture.trim().length() == 0)
+                            planDeparture = "--";
+                        if(planArrive.trim().length() == 0)
+                            planArrive = "--";
+                        if(actualArrive.trim().length() == 0)
+                            actualArrive = "--";
+                        if(actualDeparture.trim().length() == 0)
+                            actualDeparture = "--";
                     }
                     System.out.println(" [航班]: " + flightCode +
                             " [航空公司]: " + flightCompany +

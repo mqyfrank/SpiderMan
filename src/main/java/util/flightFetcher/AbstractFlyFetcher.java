@@ -31,8 +31,8 @@ public abstract class AbstractFlyFetcher<All, Certain, CertainAll> implements Fl
         System.out.println("@localhost: fetching url: " + allFlightUrl);
         Connection connection;
         try {
-            connection = Jsoup.connect(allFlightUrl).timeout(0).followRedirects(true)
-                              .proxy("180.118.134.222", 9000);
+            connection = Jsoup.connect(allFlightUrl).timeout(0).followRedirects(true);
+                              //.proxy("180.118.134.222", 9000);
             for(String[] header : HEADERS){
                 connection.header(header[0], header[1]);
             }
