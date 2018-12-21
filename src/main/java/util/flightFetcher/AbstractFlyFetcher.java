@@ -49,7 +49,16 @@ public abstract class AbstractFlyFetcher<All, Certain, CertainAll> implements Fl
             html = connection.execute().parse().html();
         }catch (Exception e){
             System.out.println("@localhost: [fatal error occurs in \"getPage()\"]: " + e.getMessage());
-            return null;
+            return "<!DOCTYPE html>\n" +
+                    "<html lang=\"en\">\n" +
+                    "<head>\n" +
+                    "    <meta charset=\"UTF-8\">\n" +
+                    "    <title>Title</title>\n" +
+                    "</head>\n" +
+                    "<body>\n" +
+                    "\n" +
+                    "</body>\n" +
+                    "</html>";
         }
         return html;
     }

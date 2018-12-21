@@ -5,7 +5,6 @@ import util.flightFetcher.VariFlightFetcher;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
 public class AllFlights {
     public static void main(String[] args){
@@ -13,7 +12,6 @@ public class AllFlights {
         HashMap<String, List<DetailFlightBean>> detailFlightBeans = variFlightFetcher
                 .fetchCertainPage(variFlightFetcher.fetchAllPage());
 
-        Set<String> _keySet = detailFlightBeans.keySet();
         /**
         for(String s : _keySet){
             List<DetailFlightBean> _list = detailFlightBeans.get(s);
@@ -37,7 +35,7 @@ public class AllFlights {
         }
          */
 
-        List<DetailFlightBean> detailFlightBeanList = detailFlightBeans.get("3K721");
-        System.out.println(detailFlightBeanList.size());
+        //List<DetailFlightBean> detailFlightBeanList = detailFlightBeans.get("3K721");
+        //System.out.println(detailFlightBeanList.size());
     }
 }

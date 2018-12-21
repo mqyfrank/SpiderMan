@@ -78,9 +78,7 @@ public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, Deta
         HashMap<String, List<DetailFlightBean>> detailFlightBeans = new HashMap<>();
         SQLServerUtil sqlServerUtil = new SQLServerUtil();
 
-        int count = 0;
         for(SimpleFlightBean bean : allFlight) {
-            count++;
             //obtain base url, like "http://www.variflight.com/flight/fnum/AA8893.html?AE71649A58c77="
             String certainUrl = Constants.FLIGHT_BASE + bean.getLink();
             String html;
@@ -93,8 +91,6 @@ public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, Deta
                 System.out.println("[SQL Server]: " + e.getMessage());
             }
             detailFlightBeans.put(bean.getFlight(), detailFlightBeanList);
-            if(count == 9)
-                break;
         }
         return detailFlightBeans;
     }
