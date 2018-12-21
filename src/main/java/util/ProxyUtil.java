@@ -7,6 +7,8 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProxyUtil {
 
@@ -61,6 +63,30 @@ public class ProxyUtil {
                 System.out.println("@localhost: Unusable host has been deleted: host:[" + _result.getString(1)
                         + "]");
             }
+        }
+    }
+
+    public static HashMap<String, Integer> getProxyPool(){
+        SQLServerUtil util = new SQLServerUtil();
+        HashMap<String, Integer> map = new HashMap<>();
+
+        try {
+            Connection connection = util.createNewConnection("VariFlight");
+            Statement statement = util.createNewStatement(connection);
+
+            String sql = "SELECT top 1 _HOST, _PORT FROM CrawledIp ORDER BY NEWID();";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()){
+                String _host = resultSet.getString(1);
+                int _port = resultSet.getInt(2);
+
+                map.put(_host, _port);
+            }
+            return map;
+        }catch (Exception e){
+            System.out.println("[SQL Server]: " + e.getMessage());
+            return null;
         }
     }
 }

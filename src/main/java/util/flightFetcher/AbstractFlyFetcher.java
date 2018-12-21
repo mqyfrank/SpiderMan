@@ -2,8 +2,12 @@ package util.flightFetcher;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
+import util.ProxyUtil;
+
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 
 public abstract class AbstractFlyFetcher<All, Certain, CertainAll> implements FlyFetcher{
@@ -26,13 +30,18 @@ public abstract class AbstractFlyFetcher<All, Certain, CertainAll> implements Fl
      * @return
      */
     public String getPage(String _url){
-        String html = "";
+        String html;
         String allFlightUrl = _url;
         System.out.println("@localhost: fetching url: " + allFlightUrl);
         Connection connection;
         try {
-            connection = Jsoup.connect(allFlightUrl).timeout(0).followRedirects(true);
-                              //.proxy("180.118.134.222", 9000);
+            HashMap<String, Integer> _proxy = ProxyUtil.getProxyPool();
+            Set<String> hostKey = _proxy.keySet();
+            Iterator<String> iterator = hostKey.iterator();
+            String host = iterator.next();
+            int port = _proxy.get(host);
+            connection = Jsoup.connect(allFlightUrl).timeout(0).followRedirects(true)
+                              .proxy(host, port);
             for(String[] header : HEADERS){
                 connection.header(header[0], header[1]);
             }

@@ -44,10 +44,6 @@ public class HtmlParserUtil {
         @Array
         List<DetailFlightBean> list = new ArrayList<>();
 
-        //Logger
-        org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger("HtmlParserUtil.class");
-        BasicConfigurator.configure();
-
         //get the certain flight's page
         Document doc = Jsoup.parse(html);
 
