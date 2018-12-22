@@ -3,7 +3,12 @@ package util.flightFetcher;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import util.ProxyUtil;
+import util.SQLServerUtil;
+import util.TimeUtil;
 
+import java.io.IOException;
+import java.net.ConnectException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -34,31 +39,27 @@ public abstract class AbstractFlyFetcher<All, Certain, CertainAll> implements Fl
         String allFlightUrl = _url;
         System.out.println("@localhost: fetching url: " + allFlightUrl);
         Connection connection;
+        String host = "";
+        int port;
         try {
-            HashMap<String, Integer> _proxy = ProxyUtil.getProxyPool();
-            Set<String> hostKey = _proxy.keySet();
-            Iterator<String> iterator = hostKey.iterator();
-            String host = iterator.next();
-            int port = _proxy.get(host);
-            connection = Jsoup.connect(allFlightUrl).timeout(0).followRedirects(true)
-                              .proxy(host, port);
+            TimeUtil.delay(10 * 1000);
+            //HashMap<String, Integer> _proxy = ProxyUtil.getProxyPool();
+            //Set<String> hostKey = _proxy.keySet();
+            //Iterator<String> iterator = hostKey.iterator();
+            //host = iterator.next();
+            //port = _proxy.get(host);
+            connection = Jsoup.connect(allFlightUrl).timeout(6000).followRedirects(true);
+                              //.proxy(host, port);
             for(String[] header : HEADERS){
                 connection.header(header[0], header[1]);
             }
             //get html text
             html = connection.execute().parse().html();
         }catch (Exception e){
-            System.out.println("@localhost: [fatal error occurs in \"getPage()\"]: " + e.getMessage());
-            return "<!DOCTYPE html>\n" +
-                    "<html lang=\"en\">\n" +
-                    "<head>\n" +
-                    "    <meta charset=\"UTF-8\">\n" +
-                    "    <title>Title</title>\n" +
-                    "</head>\n" +
-                    "<body>\n" +
-                    "\n" +
-                    "</body>\n" +
-                    "</html>";
+            System.out.println("[Exception in 'getPage()']: " + e.getMessage());
+            SQLServerUtil util = new SQLServerUtil();
+            util.removeProxy(host);
+            return "error";
         }
         return html;
     }

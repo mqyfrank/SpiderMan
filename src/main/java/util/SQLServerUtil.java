@@ -94,14 +94,11 @@ public class SQLServerUtil {
      */
     public void clearTableWithTableName(String dbName, String tableName) throws Exception{
         //sql
-        String _clear = "DELETE FROM " + tableName + ";";
+        String _clear = "DELETE FROM " + tableName + " WHERE 1 = 1;";
         Connection connection = createNewConnection(dbName);
         Statement statement = createNewStatement(connection);
 
-        if(statement.execute(_clear))
-            return;
-        else
-            throw new RuntimeException("SQL statement execution failed.");
+        statement.execute(_clear);
     }
 
     /**
@@ -153,5 +150,17 @@ public class SQLServerUtil {
             statement.execute();
         }
         releaseSource(connection, null);
+    }
+
+    public void removeProxy(String key){
+        try{
+            Connection connection = createNewConnection("VariFlight");
+            Statement statement = createNewStatement(connection);
+
+            String sql = "DELETE FROM CrawledIp WHERE _HOST = " + key + ";";
+            statement.execute(sql);
+        }catch (Exception e){
+
+        }
     }
 }

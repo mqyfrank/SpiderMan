@@ -24,9 +24,10 @@ public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, Deta
     public List<SimpleFlightBean> fetchAllPage() {
         //base url
         String url = Constants.flight_number_info;
-        String html = getPage(url);
-        if(html == "" || html == null)
-            throw new RuntimeException("No content!");
+        //String html = getPage(url);
+        String html;
+        while ((html = getPage(url)).equals("error"))
+            ;
         /**
          * <div class="list">
          *     <strong style="font-size:14px">2018-12-17航班列表</strong>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -82,7 +83,7 @@ public class VariFlightFetcher extends AbstractFlyFetcher<SimpleFlightBean, Deta
             //obtain base url, like "http://www.variflight.com/flight/fnum/AA8893.html?AE71649A58c77="
             String certainUrl = Constants.FLIGHT_BASE + bean.getLink();
             String html;
-            html = this.getPage(certainUrl); //get whole page
+            while((html = this.getPage(certainUrl)).equals("error")); //get whole page
 
             List<DetailFlightBean> detailFlightBeanList = htmlParserUtil.parseHtmlOfCertainFlight(html);
             try {
