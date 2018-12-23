@@ -1,7 +1,7 @@
 package bean;
 
 import java.io.Serializable;
-
+@Deprecated
 public class DetailFlightBean implements Serializable {
     /**
      * flight company

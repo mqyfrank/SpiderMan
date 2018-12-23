@@ -1,12 +1,10 @@
-package fetcher;
-
 import bean.DetailFlightBean;
 import util.flightFetcher.VariFlightFetcher;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class AllFlights {
+public class FetchAllFlightTest {
     public static void main(String[] args){
         VariFlightFetcher variFlightFetcher = new VariFlightFetcher();
         HashMap<String, List<DetailFlightBean>> detailFlightBeans = variFlightFetcher

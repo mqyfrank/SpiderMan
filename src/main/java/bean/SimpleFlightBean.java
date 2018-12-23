@@ -2,6 +2,7 @@ package bean;
 
 import java.io.Serializable;
 
+@Deprecated
 public class SimpleFlightBean implements Serializable {
     /**
      * Flight Code

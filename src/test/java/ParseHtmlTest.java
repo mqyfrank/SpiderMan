@@ -1,5 +1,3 @@
-package boot;
-
 import util.HtmlParserUtil;
 
 import java.io.BufferedReader;
